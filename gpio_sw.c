@@ -242,7 +242,7 @@ sw_gpio_out_t sw_gpio_read_status(sw_gpio_cfg_t *cfg)
 {
     return cfg->sw_out;
 }
-void gpio_sw_delete(sw_gpio_cfg_t *cfg)
+void sw_gpio_delete(sw_gpio_cfg_t *cfg)
 {
     if (cfg)
     {
@@ -253,7 +253,7 @@ void gpio_sw_delete(sw_gpio_cfg_t *cfg)
         free(cfg);
     }
 }
-void gpio_sw_delete_event_loop()
+void sw_gpio_delete_event_loop()
 {
     if (sw_gpio_event_task)
     {
