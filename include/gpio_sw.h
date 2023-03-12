@@ -14,11 +14,11 @@
 
 #define MIN_BOUNCEDELAY 10 / portTICK_PERIOD_MS
 #define MAX_BOUNCEDELAY 100 / portTICK_PERIOD_MS
-#define DEFAULT_BOUNCEDELAY 50 / portTICK_PERIOD_MS // время дребезга в мс
+#define DEFAULT_BOUNCEDELAY 50 / portTICK_PERIOD_MS // время дребезга в тиках RTOS
 
 #define MIN_DETECT_TIME 10 / portTICK_PERIOD_MS
 #define MAX_DETECT_TIME 1000 / portTICK_PERIOD_MS
-#define DEFAULT_DETECT_TIME 500 / portTICK_PERIOD_MS                  // задержка быстрого переключения переход в автомат 50*10=0.5 сек
+#define DEFAULT_DETECT_TIME 500 / portTICK_PERIOD_MS // время подсчета количества переключений, период автоинкремента в тиках FREERTOS
 
 // переключастель с подавлением дребезга контактов
 // sw_port - номер порта к которому подключен переключатель
@@ -30,10 +30,11 @@
 //  0 - не было переключений
 //  1-.... - количество переключений за время sw_detect_time
 // sw_debounce_time - время подавления дребезга в тиках FREERTOS
-// sw_detect_time - время подсчета количества переключений в тиках FREERTOS, 
+// sw_detect_time - время подсчета количества переключений в тиках FREERTOS,
 //                  при установке времени меньше sw_debounce_time - регистрация однократного переключения
+//                  в режиме SW_AUTO_GENERATE_MODE время автоинкремента
 // sw_debounce_task_hande - задача обработчик подавления дребезга и обработки состояния переключателя
-// sw_event_handle  - callback? event handle? task handle? queue handle? - вызов внешнего обработчика нажатия кнопок при регистрации переключений
+// sw_event_handle  - event handle - вызов внешнего обработчика нажатия кнопок при регистрации переключений
 
 typedef enum
 {

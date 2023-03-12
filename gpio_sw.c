@@ -12,8 +12,9 @@
 // sw_debounce_time - время подавления дребезга в тиках FREERTOS
 // sw_detect_time - время подсчета количества переключений в тиках FREERTOS,
 //                  при установке времени меньше sw_debounce_time - регистрация однократного переключения
+//                  в режиме SW_AUTO_GENERATE_MODE время автоинкремента
 // sw_debounce_task_hande - задача обработчик подавления дребезга и обработки состояния переключателя
-// sw_event_handle  - callback? event handle? task handle? queue handle? - вызов внешнего обработчика нажатия кнопок при регистрации переключений
+// sw_event_handle  - event handle - вызов внешнего обработчика нажатия кнопок при регистрации переключений
 
 struct sw_gpio_cfg
 {
@@ -24,7 +25,6 @@ struct sw_gpio_cfg
     TickType_t sw_detect_time;            // in
     TaskHandle_t sw_debounce_task_handle; // internal out
     sw_event_handle_t sw_event_handle;    // event handle callback
-    // void (*sw_event_handle)(void *args, esp_event_base_t base, int32_t id, void *data); // event handle callback
 };
 
 static esp_event_loop_handle_t sw_gpio_event_task = NULL;
