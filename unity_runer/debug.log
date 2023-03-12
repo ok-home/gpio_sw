@@ -1,0 +1,2334 @@
+2023-03-06 18:14:06,427 - Debug Adapter (main) - DEBUG - START_TIME_2023_03_06_18-14-06
+2023-03-06 18:14:06,436 - Debug Adapter (main) - DEBUG - Init errors:None
+2023-03-06 18:14:06,437 - Debug Adapter (main) - INFO - Working directory: /mnt/c/Users/ok-home/AppData/Local/Programs/Microsoft VS Code
+2023-03-06 18:14:06,441 - Debug Adapter (main) - INFO - Arguments: 
+{   'app_flash_off': 65536,
+    'board_type': None,
+    'cmdfile': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/esp-idf-vscode-generated.gdb',
+    'core_file': (),
+    'debug': 5,
+    'developer_mode': 'none',
+    'device_name': 'esp32',
+    'elfpath': (   '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/build/gpio_sw_unity_runer.elf',),
+    'log_file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/debug.log',
+    'log_mult_files': None,
+    'log_no_debug_console': None,
+    'oocd': 'openocd',
+    'oocd_args': None,
+    'oocd_ip': 'localhost',
+    'oocd_mode': 'without_oocd',
+    'oocd_scripts': None,
+    'port': 43474,
+    'postmortem': False,
+    'tmo_scale_factor': 1,
+    'toolchain_prefix': 'xtensa-esp32-elf-'}
+2023-03-06 18:14:06,455 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STARTED
+2023-03-06 18:14:06,460 - Debug Adapter (main) - INFO - Starting. Cmd: /home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter_main.py -d 5 -e /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/build/gpio_sw_unity_runer.elf -l /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/debug.log -p 43474 -dn esp32 -a 0x10000 -t xtensa-esp32-elf- -om without_oocd -x /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/esp-idf-vscode-generated.gdb
+
+2023-03-06 18:14:06,483 - Debug Adapter (main) - INFO - Listening on port 43474
+2023-03-06 18:14:06,483 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_READY2CONNECT
+2023-03-06 18:14:06,613 - Debug Adapter (main) - DEBUG - Got connection
+2023-03-06 18:14:06,631 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 514\\r\\n'<<
+
+2023-03-06 18:14:06,639 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:06,650 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Debug adapter -> Extension: DEBUG_ADAPTER_STARTED\n", "source": {}}, "seq": 0}
+
+2023-03-06 18:14:06,650 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "adapterID": "espidf",
+        "clientID": "vscode",
+        "clientName": "Visual Studio Code",
+        "columnsStartAt1": true,
+        "linesStartAt1": true,
+        "locale": "en",
+        "pathFormat": "path",
+        "supportsArgsCanBeInterpretedByShell": true,
+        "supportsInvalidatedEvent": true,
+        "supportsMemoryEvent": true,
+        "supportsMemoryReferences": true,
+        "supportsProgressReporting": true,
+        "supportsRunInTerminalRequest": true,
+        "supportsStartDebuggingRequest": true,
+        "supportsVariablePaging": true,
+        "supportsVariableType": true
+    },
+    "command": "initialize",
+    "seq": 1,
+    "type": "request"
+}
+2023-03-06 18:14:06,650 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Starting. Cmd: /home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter_main.py -d 5 -e /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/build/gpio_sw_unity_runer.elf -l /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/debug.log -p 43474 -dn esp32 -a 0x10000 -t xtensa-esp32-elf- -om without_oocd -x /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/esp-idf-vscode-generated.gdb\n\n", "source": {}}, "seq": 1}
+
+2023-03-06 18:14:06,656 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Listening on port 43474\n", "source": {}}, "seq": 2}
+
+2023-03-06 18:14:06,656 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Debug adapter -> Extension: DEBUG_ADAPTER_READY2CONNECT\n", "source": {}}, "seq": 3}
+
+2023-03-06 18:14:06,670 - Gdb - DEBUG - MI->: -gdb-set mi-async on
+2023-03-06 18:14:06,672 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got connection\n", "source": {}}, "seq": 4}
+
+2023-03-06 18:14:06,673 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"adapterID\": \"espidf\",\n        \"clientID\": \"vscode\",\n        \"clientName\": \"Visual Studio Code\",\n        \"columnsStartAt1\": true,\n        \"linesStartAt1\": true,\n        \"locale\": \"en\",\n        \"pathFormat\": \"path\",\n        \"supportsArgsCanBeInterpretedByShell\": true,\n        \"supportsInvalidatedEvent\": true,\n        \"supportsMemoryEvent\": true,\n        \"supportsMemoryReferences\": true,\n        \"supportsProgressReporting\": true,\n        \"supportsRunInTerminalRequest\": true,\n        \"supportsStartDebuggingRequest\": true,\n        \"supportsVariablePaging\": true,\n        \"supportsVariableType\": true\n    },\n    \"command\": \"initialize\",\n    \"seq\": 1,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 5}
+
+2023-03-06 18:14:07,691 - Gdb - DEBUG - MI<-:
+[{'message': 'thread-group-added',
+  'payload': {'id': 'i1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': 'done',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:07,691 - Gdb - INFO - NOTIFY: thread-group-added {'id': 'i1'}
+2023-03-06 18:14:07,692 - Gdb - DEBUG - RESULT: done None
+2023-03-06 18:14:07,692 - Gdb - DEBUG - MI->: -gdb-set logging file /tmp/gdb_proc.log
+2023-03-06 18:14:07,692 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:07,693 - Gdb - DEBUG - RESULT: done None
+2023-03-06 18:14:07,693 - Gdb - DEBUG - MI->: -gdb-set logging on
+2023-03-06 18:14:07,694 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:07,695 - Gdb - DEBUG - RESULT: done None
+2023-03-06 18:14:07,695 - Debug Adapter (main) - DEBUG - Created gdb object of type: GdbEsp32
+2023-03-06 18:14:07,695 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Created gdb object of type: GdbEsp32\n", "source": {}}, "seq": 6}
+
+2023-03-06 18:14:07,696 - Gdb - DEBUG - MI->: -file-exec-and-symbols /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/build/gpio_sw_unity_runer.elf
+2023-03-06 18:14:07,815 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:07,815 - Gdb - DEBUG - RESULT: done None
+2023-03-06 18:14:07,816 - Gdb - DEBUG - Skipped connection to remote target
+2023-03-06 18:14:07,816 - Debug Adapter(Command Processor) - DEBUG - Processed command: initialize
+2023-03-06 18:14:07,816 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 1, "success": true, "command": "initialize", "seq": 7, "body": {"supportsConfigurationDoneRequest": true, "supportsFunctionBreakpoints": false, "supportsConditionalBreakpoints": true, "supportsHitConditionalBreakpoints": true, "supportsEvaluateForHovers": false, "exceptionBreakpointFilters": false, "supportsStepBack": false, "supportsSetVariable": true, "supportsRestartFrame": false, "supportsGotoTargetsRequest": false, "supportsStepInTargetsRequest": true, "supportsCompletionsRequest": false, "completionTriggerCharacters": false, "supportsModulesRequest": false, "additionalModuleColumns": false, "supportedChecksumAlgorithms": false, "supportsRestartRequest": true, "supportsExceptionOptions": false, "supportsValueFormattingOptions": false, "supportsExceptionInfoRequest": false, "supportTerminateDebuggee": true, "supportsDelayedStackTraceLoading": false, "supportsLoadedSourcesRequest": false, "supportsLogPoints": false, "supportsTerminateThreadsRequest": false, "supportsSetExpression": false, "supportsTerminateRequest": false, "supportsDataBreakpoints": true, "supportsReadMemoryRequest": true, "supportsDisassembleRequest": true, "supportsCancelRequest": false, "supportsBreakpointLocationsRequest": false, "supportsClipboardContext": false, "supportsSteppingGranularity": true, "supportsInstructionBreakpoints": true}}
+
+2023-03-06 18:14:07,817 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "initialized", "seq": 8}
+
+2023-03-06 18:14:07,817 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Debug Adapter initialized\n", "source": {}}, "seq": 9}
+
+2023-03-06 18:14:07,817 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: initialize\n", "source": {}}, "seq": 10}
+
+2023-03-06 18:14:07,883 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 306\\r\\n'<<
+
+2023-03-06 18:14:07,884 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:07,884 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "__sessionId": "394bb4e0-33b2-41f5-a376-36fe7ae6c05d",
+        "elfFilePath": "/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/build/gpio_sw_unity_runer.elf",
+        "name": "GDB QEMU",
+        "request": "launch",
+        "sessionID": "qemu.debug.session",
+        "type": "espidf"
+    },
+    "command": "launch",
+    "seq": 2,
+    "type": "request"
+}
+2023-03-06 18:14:07,884 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"__sessionId\": \"394bb4e0-33b2-41f5-a376-36fe7ae6c05d\",\n        \"elfFilePath\": \"/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/build/gpio_sw_unity_runer.elf\",\n        \"name\": \"GDB QEMU\",\n        \"request\": \"launch\",\n        \"sessionID\": \"qemu.debug.session\",\n        \"type\": \"espidf\"\n    },\n    \"command\": \"launch\",\n    \"seq\": 2,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 11}
+
+2023-03-06 18:14:07,885 - Gdb - DEBUG - MI->: -interpreter-exec console "source /home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/esp-idf-vscode-generated.gdb"
+2023-03-06 18:14:12,887 - Gdb - DEBUG - MI<-:
+[{'message': 'thread-group-started',
+  'payload': {'id': 'i1', 'pid': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': 'thread-created',
+  'payload': {'group-id': 'i1', 'id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': 'thread-created',
+  'payload': {'group-id': 'i1', 'id': '2'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': None,
+  'payload': '0x40000400 in ?? ()\\n',
+  'stream': 'stdout',
+  'type': 'console'},
+ {'message': 'stopped',
+  'payload': {'frame': {'addr': '0x40000400',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'func': '??'},
+              'stopped-threads': 'all',
+              'thread-id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': None,
+  'payload': 'Temporary breakpoint 1 at 0x400d60e7: file '
+             '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c, '
+             'line 25.\\n',
+  'stream': 'stdout',
+  'type': 'console'},
+ {'message': 'breakpoint-created',
+  'payload': {'bkpt': {'addr': '0x400d60e7',
+                       'disp': 'del',
+                       'enabled': 'y',
+                       'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                       'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                       'func': 'app_main',
+                       'line': '25',
+                       'number': '1',
+                       'original-location': 'app_main',
+                       'thread-groups': ['i1'],
+                       'times': '0',
+                       'type': 'breakpoint'}},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': 'running',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'},
+ {'message': 'running',
+  'payload': {'thread-id': 'all'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': 'breakpoint-modified',
+  'payload': {'bkpt': {'addr': '0x400d60e7',
+                       'disp': 'del',
+                       'enabled': 'y',
+                       'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                       'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                       'func': 'app_main',
+                       'line': '25',
+                       'number': '1',
+                       'original-location': 'app_main',
+                       'thread-groups': ['i1'],
+                       'times': '1',
+                       'type': 'breakpoint'}},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': None, 'payload': '\\n', 'stream': 'stdout', 'type': 'console'},
+ {'message': None,
+  'payload': 'Thread 1 hit Temporary breakpoint 1, app_main () at '
+             '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c:25\\n',
+  'stream': 'stdout',
+  'type': 'console'},
+ {'message': None,
+  'payload': '25\\t    print_banner(\\"Running all the registered '
+             'tests\\");\\n',
+  'stream': 'stdout',
+  'type': 'console'},
+ {'message': 'stopped',
+  'payload': {'bkptno': '1',
+              'disp': 'del',
+              'frame': {'addr': '0x400d60e7',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'func': 'app_main',
+                        'line': '25'},
+              'reason': 'breakpoint-hit',
+              'stopped-threads': 'all',
+              'thread-id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'},
+ {'message': 'breakpoint-deleted',
+  'payload': {'id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'}]
+2023-03-06 18:14:12,887 - Gdb - INFO - NOTIFY: thread-group-started {'id': 'i1', 'pid': '1'}
+2023-03-06 18:14:12,887 - Gdb - INFO - NOTIFY: thread-created {'group-id': 'i1', 'id': '1'}
+2023-03-06 18:14:12,887 - Gdb - INFO - NOTIFY: thread-created {'group-id': 'i1', 'id': '2'}
+2023-03-06 18:14:12,888 - Gdb - INFO - CONS: '0x40000400 in ?? ()\\n'
+2023-03-06 18:14:12,888 - Gdb - INFO - NOTIFY: stopped {'frame': {'addr': '0x40000400', 'arch': 'xtensa', 'args': [], 'func': '??'},
+ 'stopped-threads': 'all',
+ 'thread-id': '1'}
+2023-03-06 18:14:12,888 - Gdb - INFO - CONS: ('Temporary breakpoint 1 at 0x400d60e7: file '
+ '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c, '
+ 'line 25.\\n')
+2023-03-06 18:14:12,888 - Gdb - INFO - NOTIFY: breakpoint-created {'bkpt': {'addr': '0x400d60e7',
+          'disp': 'del',
+          'enabled': 'y',
+          'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+          'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+          'func': 'app_main',
+          'line': '25',
+          'number': '1',
+          'original-location': 'app_main',
+          'thread-groups': ['i1'],
+          'times': '0',
+          'type': 'breakpoint'}}
+2023-03-06 18:14:12,888 - Gdb - DEBUG - RESULT: running None
+2023-03-06 18:14:13,389 - Gdb - INFO - NOTIFY: running {'thread-id': 'all'}
+2023-03-06 18:14:13,390 - Gdb - INFO - NOTIFY: breakpoint-modified {'bkpt': {'addr': '0x400d60e7',
+          'disp': 'del',
+          'enabled': 'y',
+          'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+          'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+          'func': 'app_main',
+          'line': '25',
+          'number': '1',
+          'original-location': 'app_main',
+          'thread-groups': ['i1'],
+          'times': '1',
+          'type': 'breakpoint'}}
+2023-03-06 18:14:13,390 - Gdb - INFO - CONS: '\\n'
+2023-03-06 18:14:13,390 - Gdb - INFO - CONS: ('Thread 1 hit Temporary breakpoint 1, app_main () at '
+ '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c:25\\n')
+2023-03-06 18:14:13,391 - Gdb - INFO - CONS: '25\\t    print_banner(\\"Running all the registered tests\\");\\n'
+2023-03-06 18:14:13,391 - Gdb - INFO - NOTIFY: stopped {'bkptno': '1',
+ 'disp': 'del',
+ 'frame': {'addr': '0x400d60e7',
+           'arch': 'xtensa',
+           'args': [],
+           'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'func': 'app_main',
+           'line': '25'},
+ 'reason': 'breakpoint-hit',
+ 'stopped-threads': 'all',
+ 'thread-id': '1'}
+2023-03-06 18:14:13,391 - Gdb - INFO - NOTIFY: breakpoint-deleted {'id': '1'}
+2023-03-06 18:14:13,391 - Gdb - DEBUG - MI->: -thread-info
+2023-03-06 18:14:13,404 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'current-thread-id': '1',
+              'threads': [{'details': 'CPU#0 [running]',
+                           'frame': {'addr': '0x400d60e7',
+                                     'arch': 'xtensa',
+                                     'args': [],
+                                     'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                                     'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                                     'func': 'app_main',
+                                     'level': '0',
+                                     'line': '25'},
+                           'id': '1',
+                           'state': 'stopped',
+                           'target-id': 'Thread 1.1'},
+                          {'details': 'CPU#1 [halted ]',
+                           'frame': {'addr': '0x40084916',
+                                     'arch': 'xtensa',
+                                     'args': [],
+                                     'file': '/home/ok-home/esp/esp-idf/components/esp_hw_support/cpu.c',
+                                     'fullname': '/home/ok-home/esp/esp-idf/components/esp_hw_support/cpu.c',
+                                     'func': 'esp_cpu_wait_for_intr',
+                                     'level': '0',
+                                     'line': '110'},
+                           'id': '2',
+                           'state': 'stopped',
+                           'target-id': 'Thread 1.2'}]},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:13,404 - Gdb - DEBUG - RESULT: done {'current-thread-id': '1',
+ 'threads': [{'details': 'CPU#0 [running]',
+              'frame': {'addr': '0x400d60e7',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'func': 'app_main',
+                        'level': '0',
+                        'line': '25'},
+              'id': '1',
+              'state': 'stopped',
+              'target-id': 'Thread 1.1'},
+             {'details': 'CPU#1 [halted ]',
+              'frame': {'addr': '0x40084916',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'file': '/home/ok-home/esp/esp-idf/components/esp_hw_support/cpu.c',
+                        'fullname': '/home/ok-home/esp/esp-idf/components/esp_hw_support/cpu.c',
+                        'func': 'esp_cpu_wait_for_intr',
+                        'level': '0',
+                        'line': '110'},
+              'id': '2',
+              'state': 'stopped',
+              'target-id': 'Thread 1.2'}]}
+2023-03-06 18:14:13,405 - Debug Adapter(Command Processor) - DEBUG - Processed command: launch
+2023-03-06 18:14:13,405 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "stopped", "body": {"reason": "breakpoint", "description": "Stopped with reason: breakpoint", "threadId": 1, "allThreadsStopped": true}, "seq": 12}
+
+2023-03-06 18:14:13,405 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 230\\r\\n'<<
+
+2023-03-06 18:14:13,406 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 2, "success": true, "command": "launch", "seq": 13}
+
+2023-03-06 18:14:13,406 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:13,406 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Debug Adapter is running\n", "source": {}}, "seq": 14}
+
+2023-03-06 18:14:13,407 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "breakpoints": [
+            {
+                "line": 29
+            }
+        ],
+        "lines": [
+            29
+        ],
+        "source": {
+            "name": "gpio_sw.c",
+            "path": "/home/ok-home/myex/gpio_switch/components/gpio_sw/gpio_sw.c"
+        },
+        "sourceModified": false
+    },
+    "command": "setBreakpoints",
+    "seq": 3,
+    "type": "request"
+}
+2023-03-06 18:14:13,407 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: launch\n", "source": {}}, "seq": 15}
+
+2023-03-06 18:14:13,408 - Gdb - DEBUG - MI->: -break-insert -i 0 /home/ok-home/myex/gpio_switch/components/gpio_sw/gpio_sw.c:29
+2023-03-06 18:14:13,408 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"breakpoints\": [\n            {\n                \"line\": 29\n            }\n        ],\n        \"lines\": [\n            29\n        ],\n        \"source\": {\n            \"name\": \"gpio_sw.c\",\n            \"path\": \"/home/ok-home/myex/gpio_switch/components/gpio_sw/gpio_sw.c\"\n        },\n        \"sourceModified\": false\n    },\n    \"command\": \"setBreakpoints\",\n    \"seq\": 3,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 16}
+
+2023-03-06 18:14:18,409 - Gdb - DEBUG - MI<-:
+[{'message': 'error',
+  'payload': {'msg': 'No source file named '
+                     '/home/ok-home/myex/gpio_switch/components/gpio_sw/gpio_sw.c.'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:18,409 - Gdb - DEBUG - RESULT: error {'msg': 'No source file named '
+        '/home/ok-home/myex/gpio_switch/components/gpio_sw/gpio_sw.c.'}
+2023-03-06 18:14:18,409 - Debug Adapter (main) - ERROR - unhashable type: 'dict'
+Traceback (most recent call last):
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/command_processor.py", line 700, in on_setBreakpoints_request
+    try_set_once(get_good_path(source.path), src_line, condition)
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/command_processor.py", line 676, in try_set_once
+    raise e
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/command_processor.py", line 674, in try_set_once
+    return self.da.source_break_add(source_path, line, condition=condition)
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/debug_adapter.py", line 523, in source_break_add
+    bp_num = self._gdb.add_bp("{}:{}".format(src, line), ignore_count=0, cond=condition)
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/debug_backend/debug_backend/gdb.py", line 487, in add_bp
+    raise DebuggerError('Failed to insert BP!')
+debug_adapter.debug_backend.debug_backend.defs.DebuggerError: Failed to insert BP!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/command_processor.py", line 52, in __call__
+    on_request(protocol_message)
+  File "/home/ok-home/.vscode-server/extensions/espressif.esp-idf-extension-1.6.0/esp_debug_adapter/debug_adapter/command_processor.py", line 706, in on_setBreakpoints_request
+    bp.update({{'message': e}})
+TypeError: unhashable type: 'dict'
+2023-03-06 18:14:18,410 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "unhashable type: 'dict'\n", "source": {}}, "seq": 17}
+
+2023-03-06 18:14:18,472 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 88\\r\\n'<<
+
+2023-03-06 18:14:18,472 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "unhashable type: 'dict'\n", "source": {}}, "seq": 18}
+
+2023-03-06 18:14:18,472 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:18,473 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "breakpoints": []
+    },
+    "command": "setDataBreakpoints",
+    "seq": 4,
+    "type": "request"
+}
+2023-03-06 18:14:18,474 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"breakpoints\": []\n    },\n    \"command\": \"setDataBreakpoints\",\n    \"seq\": 4,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 19}
+
+2023-03-06 18:14:18,474 - Debug Adapter(Command Processor) - DEBUG - Processed command: setDataBreakpoints
+2023-03-06 18:14:18,474 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 4, "success": true, "command": "setDataBreakpoints", "body": {"breakpoints": []}, "seq": 20}
+
+2023-03-06 18:14:18,475 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 95\\r\\n'<<
+
+2023-03-06 18:14:18,475 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: setDataBreakpoints\n", "source": {}}, "seq": 21}
+
+2023-03-06 18:14:18,476 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:18,476 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "breakpoints": []
+    },
+    "command": "setInstructionBreakpoints",
+    "seq": 5,
+    "type": "request"
+}
+2023-03-06 18:14:18,477 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"breakpoints\": []\n    },\n    \"command\": \"setInstructionBreakpoints\",\n    \"seq\": 5,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 22}
+
+2023-03-06 18:14:18,477 - Debug Adapter(Command Processor) - DEBUG - Processed command: setInstructionBreakpoints
+2023-03-06 18:14:18,478 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 5, "success": true, "command": "setInstructionBreakpoints", "body": {"breakpoints": []}, "seq": 23}
+
+2023-03-06 18:14:18,478 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 46\\r\\n'<<
+
+2023-03-06 18:14:18,478 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: setInstructionBreakpoints\n", "source": {}}, "seq": 24}
+
+2023-03-06 18:14:18,479 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:18,479 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "command": "threads",
+    "seq": 6,
+    "type": "request"
+}
+2023-03-06 18:14:18,480 - Debug Adapter(Command Processor) - DEBUG - Processed command: threads
+2023-03-06 18:14:18,480 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"command\": \"threads\",\n    \"seq\": 6,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 25}
+
+2023-03-06 18:14:18,481 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 6, "success": true, "command": "threads", "body": {"threads": [{"id": 1, "name": "id - 1, frame -app_main, targetID - Thread 1.1"}, {"id": 2, "name": "id - 2, frame -esp_cpu_wait_for_intr, targetID - Thread 1.2"}]}, "seq": 26}
+
+2023-03-06 18:14:18,481 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: threads\n", "source": {}}, "seq": 27}
+
+2023-03-06 18:14:18,564 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 103\\r\\n'<<
+
+2023-03-06 18:14:18,565 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:18,566 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "format": {},
+        "levels": 20,
+        "startFrame": 0,
+        "threadId": 1
+    },
+    "command": "stackTrace",
+    "seq": 7,
+    "type": "request"
+}
+2023-03-06 18:14:18,566 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"format\": {},\n        \"levels\": 20,\n        \"startFrame\": 0,\n        \"threadId\": 1\n    },\n    \"command\": \"stackTrace\",\n    \"seq\": 7,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 28}
+
+2023-03-06 18:14:18,566 - Gdb - DEBUG - MI->: -thread-select 1
+2023-03-06 18:14:18,570 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'frame': {'addr': '0x400d60e7',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'func': 'app_main',
+                        'level': '0',
+                        'line': '25'},
+              'new-thread-id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:18,570 - Gdb - DEBUG - RESULT: done {'frame': {'addr': '0x400d60e7',
+           'arch': 'xtensa',
+           'args': [],
+           'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'func': 'app_main',
+           'level': '0',
+           'line': '25'},
+ 'new-thread-id': '1'}
+2023-03-06 18:14:18,571 - Gdb - DEBUG - MI->: -stack-list-frames
+2023-03-06 18:14:18,582 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'stack': [{'addr': '0x400d60e7',
+                         'arch': 'xtensa',
+                         'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                         'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                         'func': 'app_main',
+                         'level': '0',
+                         'line': '25'},
+                        {'addr': '0x400e6117',
+                         'arch': 'xtensa',
+                         'file': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/port_common.c',
+                         'fullname': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/port_common.c',
+                         'func': 'main_task',
+                         'level': '1',
+                         'line': '131'},
+                        {'addr': '0x400883b0',
+                         'arch': 'xtensa',
+                         'file': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c',
+                         'fullname': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c',
+                         'func': 'vPortTaskWrapper',
+                         'level': '2',
+                         'line': '154'}]},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:18,583 - Gdb - DEBUG - RESULT: done {'stack': [{'addr': '0x400d60e7',
+            'arch': 'xtensa',
+            'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+            'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+            'func': 'app_main',
+            'level': '0',
+            'line': '25'},
+           {'addr': '0x400e6117',
+            'arch': 'xtensa',
+            'file': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/port_common.c',
+            'fullname': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/port_common.c',
+            'func': 'main_task',
+            'level': '1',
+            'line': '131'},
+           {'addr': '0x400883b0',
+            'arch': 'xtensa',
+            'file': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c',
+            'fullname': '/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c',
+            'func': 'vPortTaskWrapper',
+            'level': '2',
+            'line': '154'}]}
+2023-03-06 18:14:18,583 - Debug Adapter(Command Processor) - DEBUG - Processed command: stackTrace
+2023-03-06 18:14:18,584 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 7, "success": true, "command": "stackTrace", "body": {"stackFrames": [{"id": 1000, "name": "app_main", "line": 25, "column": 0, "source": {"path": "/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c"}, "instructionPointerReference": "0x400d60e7"}, {"id": 1001, "name": "main_task", "line": 131, "column": 0, "source": {"path": "/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/port_common.c"}, "instructionPointerReference": "0x400e6117"}, {"id": 1002, "name": "vPortTaskWrapper", "line": 154, "column": 0, "source": {"path": "/home/ok-home/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c"}, "instructionPointerReference": "0x400883b0"}], "totalFrames": 3}, "seq": 29}
+
+2023-03-06 18:14:18,584 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: stackTrace\n", "source": {}}, "seq": 30}
+
+2023-03-06 18:14:19,057 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 74\\r\\n'<<
+
+2023-03-06 18:14:19,057 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:19,057 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "frameId": 1000
+    },
+    "command": "scopes",
+    "seq": 8,
+    "type": "request"
+}
+2023-03-06 18:14:19,058 - Gdb - DEBUG - MI->: -thread-select 1
+2023-03-06 18:14:19,058 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"frameId\": 1000\n    },\n    \"command\": \"scopes\",\n    \"seq\": 8,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 31}
+
+2023-03-06 18:14:19,061 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'frame': {'addr': '0x400d60e7',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'func': 'app_main',
+                        'level': '0',
+                        'line': '25'},
+              'new-thread-id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,061 - Gdb - DEBUG - RESULT: done {'frame': {'addr': '0x400d60e7',
+           'arch': 'xtensa',
+           'args': [],
+           'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'func': 'app_main',
+           'level': '0',
+           'line': '25'},
+ 'new-thread-id': '1'}
+2023-03-06 18:14:19,062 - Gdb - DEBUG - MI->: -stack-select-frame 0
+2023-03-06 18:14:19,063 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,063 - Gdb - DEBUG - RESULT: done None
+2023-03-06 18:14:19,063 - Gdb - DEBUG - MI->: -stack-list-locals 0
+2023-03-06 18:14:19,064 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'locals': []},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,064 - Gdb - DEBUG - RESULT: done {'locals': []}
+2023-03-06 18:14:19,065 - Gdb - DEBUG - MI->: -data-list-register-names 
+2023-03-06 18:14:19,071 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'register-names': ['pc',
+                                 'ar0',
+                                 'ar1',
+                                 'ar2',
+                                 'ar3',
+                                 'ar4',
+                                 'ar5',
+                                 'ar6',
+                                 'ar7',
+                                 'ar8',
+                                 'ar9',
+                                 'ar10',
+                                 'ar11',
+                                 'ar12',
+                                 'ar13',
+                                 'ar14',
+                                 'ar15',
+                                 'ar16',
+                                 'ar17',
+                                 'ar18',
+                                 'ar19',
+                                 'ar20',
+                                 'ar21',
+                                 'ar22',
+                                 'ar23',
+                                 'ar24',
+                                 'ar25',
+                                 'ar26',
+                                 'ar27',
+                                 'ar28',
+                                 'ar29',
+                                 'ar30',
+                                 'ar31',
+                                 'ar32',
+                                 'ar33',
+                                 'ar34',
+                                 'ar35',
+                                 'ar36',
+                                 'ar37',
+                                 'ar38',
+                                 'ar39',
+                                 'ar40',
+                                 'ar41',
+                                 'ar42',
+                                 'ar43',
+                                 'ar44',
+                                 'ar45',
+                                 'ar46',
+                                 'ar47',
+                                 'ar48',
+                                 'ar49',
+                                 'ar50',
+                                 'ar51',
+                                 'ar52',
+                                 'ar53',
+                                 'ar54',
+                                 'ar55',
+                                 'ar56',
+                                 'ar57',
+                                 'ar58',
+                                 'ar59',
+                                 'ar60',
+                                 'ar61',
+                                 'ar62',
+                                 'ar63',
+                                 'lbeg',
+                                 'lend',
+                                 'lcount',
+                                 'sar',
+                                 'windowbase',
+                                 'windowstart',
+                                 'configid0',
+                                 'configid1',
+                                 'ps',
+                                 'threadptr',
+                                 'br',
+                                 'scompare1',
+                                 'acclo',
+                                 'acchi',
+                                 'm0',
+                                 'm1',
+                                 'm2',
+                                 'm3',
+                                 'expstate',
+                                 'f64r_lo',
+                                 'f64r_hi',
+                                 'f64s',
+                                 'f0',
+                                 'f1',
+                                 'f2',
+                                 'f3',
+                                 'f4',
+                                 'f5',
+                                 'f6',
+                                 'f7',
+                                 'f8',
+                                 'f9',
+                                 'f10',
+                                 'f11',
+                                 'f12',
+                                 'f13',
+                                 'f14',
+                                 'f15',
+                                 'fcr',
+                                 'fsr',
+                                 'mmid',
+                                 'ibreakenable',
+                                 'memctl',
+                                 'atomctl',
+                                 'ddr',
+                                 'ibreaka0',
+                                 'ibreaka1',
+                                 'dbreaka0',
+                                 'dbreaka1',
+                                 'dbreakc0',
+                                 'dbreakc1',
+                                 'epc1',
+                                 'epc2',
+                                 'epc3',
+                                 'epc4',
+                                 'epc5',
+                                 'epc6',
+                                 'epc7',
+                                 'depc',
+                                 'eps2',
+                                 'eps3',
+                                 'eps4',
+                                 'eps5',
+                                 'eps6',
+                                 'eps7',
+                                 'excsave1',
+                                 'excsave2',
+                                 'excsave3',
+                                 'excsave4',
+                                 'excsave5',
+                                 'excsave6',
+                                 'excsave7',
+                                 'cpenable',
+                                 'interrupt',
+                                 'intset',
+                                 'intclear',
+                                 'intenable',
+                                 'vecbase',
+                                 'exccause',
+                                 'debugcause',
+                                 'ccount',
+                                 'prid',
+                                 'icount',
+                                 'icountlevel',
+                                 'excvaddr',
+                                 'ccompare0',
+                                 'ccompare1',
+                                 'ccompare2',
+                                 'misc0',
+                                 'misc1',
+                                 'misc2',
+                                 'misc3',
+                                 'a0',
+                                 'a1',
+                                 'a2',
+                                 'a3',
+                                 'a4',
+                                 'a5',
+                                 'a6',
+                                 'a7',
+                                 'a8',
+                                 'a9',
+                                 'a10',
+                                 'a11',
+                                 'a12',
+                                 'a13',
+                                 'a14',
+                                 'a15',
+                                 'b0',
+                                 'b1',
+                                 'b2',
+                                 'b3',
+                                 'b4',
+                                 'b5',
+                                 'b6',
+                                 'b7',
+                                 'b8',
+                                 'b9',
+                                 'b10',
+                                 'b11',
+                                 'b12',
+                                 'b13',
+                                 'b14',
+                                 'b15',
+                                 'psintlevel',
+                                 'psum',
+                                 'pswoe',
+                                 'psexcm',
+                                 'pscallinc',
+                                 'psowb',
+                                 'acc',
+                                 'dbnum',
+                                 'f64r',
+                                 'roundmode',
+                                 'invalidenable',
+                                 'divzeroenable',
+                                 'overflowenable',
+                                 'underflowenable',
+                                 'inexactenable',
+                                 'invalidflag',
+                                 'divzeroflag',
+                                 'overflowflag',
+                                 'underflowflag',
+                                 'inexactflag',
+                                 'fpreserved20',
+                                 'fpreserved20a',
+                                 'fpreserved5']},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,072 - Gdb - DEBUG - RESULT: done {'register-names': ['pc',
+                    'ar0',
+                    'ar1',
+                    'ar2',
+                    'ar3',
+                    'ar4',
+                    'ar5',
+                    'ar6',
+                    'ar7',
+                    'ar8',
+                    'ar9',
+                    'ar10',
+                    'ar11',
+                    'ar12',
+                    'ar13',
+                    'ar14',
+                    'ar15',
+                    'ar16',
+                    'ar17',
+                    'ar18',
+                    'ar19',
+                    'ar20',
+                    'ar21',
+                    'ar22',
+                    'ar23',
+                    'ar24',
+                    'ar25',
+                    'ar26',
+                    'ar27',
+                    'ar28',
+                    'ar29',
+                    'ar30',
+                    'ar31',
+                    'ar32',
+                    'ar33',
+                    'ar34',
+                    'ar35',
+                    'ar36',
+                    'ar37',
+                    'ar38',
+                    'ar39',
+                    'ar40',
+                    'ar41',
+                    'ar42',
+                    'ar43',
+                    'ar44',
+                    'ar45',
+                    'ar46',
+                    'ar47',
+                    'ar48',
+                    'ar49',
+                    'ar50',
+                    'ar51',
+                    'ar52',
+                    'ar53',
+                    'ar54',
+                    'ar55',
+                    'ar56',
+                    'ar57',
+                    'ar58',
+                    'ar59',
+                    'ar60',
+                    'ar61',
+                    'ar62',
+                    'ar63',
+                    'lbeg',
+                    'lend',
+                    'lcount',
+                    'sar',
+                    'windowbase',
+                    'windowstart',
+                    'configid0',
+                    'configid1',
+                    'ps',
+                    'threadptr',
+                    'br',
+                    'scompare1',
+                    'acclo',
+                    'acchi',
+                    'm0',
+                    'm1',
+                    'm2',
+                    'm3',
+                    'expstate',
+                    'f64r_lo',
+                    'f64r_hi',
+                    'f64s',
+                    'f0',
+                    'f1',
+                    'f2',
+                    'f3',
+                    'f4',
+                    'f5',
+                    'f6',
+                    'f7',
+                    'f8',
+                    'f9',
+                    'f10',
+                    'f11',
+                    'f12',
+                    'f13',
+                    'f14',
+                    'f15',
+                    'fcr',
+                    'fsr',
+                    'mmid',
+                    'ibreakenable',
+                    'memctl',
+                    'atomctl',
+                    'ddr',
+                    'ibreaka0',
+                    'ibreaka1',
+                    'dbreaka0',
+                    'dbreaka1',
+                    'dbreakc0',
+                    'dbreakc1',
+                    'epc1',
+                    'epc2',
+                    'epc3',
+                    'epc4',
+                    'epc5',
+                    'epc6',
+                    'epc7',
+                    'depc',
+                    'eps2',
+                    'eps3',
+                    'eps4',
+                    'eps5',
+                    'eps6',
+                    'eps7',
+                    'excsave1',
+                    'excsave2',
+                    'excsave3',
+                    'excsave4',
+                    'excsave5',
+                    'excsave6',
+                    'excsave7',
+                    'cpenable',
+                    'interrupt',
+                    'intset',
+                    'intclear',
+                    'intenable',
+                    'vecbase',
+                    'exccause',
+                    'debugcause',
+                    'ccount',
+                    'prid',
+                    'icount',
+                    'icountlevel',
+                    'excvaddr',
+                    'ccompare0',
+                    'ccompare1',
+                    'ccompare2',
+                    'misc0',
+                    'misc1',
+                    'misc2',
+                    'misc3',
+                    'a0',
+                    'a1',
+                    'a2',
+                    'a3',
+                    'a4',
+                    'a5',
+                    'a6',
+                    'a7',
+                    'a8',
+                    'a9',
+                    'a10',
+                    'a11',
+                    'a12',
+                    'a13',
+                    'a14',
+                    'a15',
+                    'b0',
+                    'b1',
+                    'b2',
+                    'b3',
+                    'b4',
+                    'b5',
+                    'b6',
+                    'b7',
+                    'b8',
+                    'b9',
+                    'b10',
+                    'b11',
+                    'b12',
+                    'b13',
+                    'b14',
+                    'b15',
+                    'psintlevel',
+                    'psum',
+                    'pswoe',
+                    'psexcm',
+                    'pscallinc',
+                    'psowb',
+                    'acc',
+                    'dbnum',
+                    'f64r',
+                    'roundmode',
+                    'invalidenable',
+                    'divzeroenable',
+                    'overflowenable',
+                    'underflowenable',
+                    'inexactenable',
+                    'invalidflag',
+                    'divzeroflag',
+                    'overflowflag',
+                    'underflowflag',
+                    'inexactflag',
+                    'fpreserved20',
+                    'fpreserved20a',
+                    'fpreserved5']}
+2023-03-06 18:14:19,073 - Gdb - DEBUG - MI->: -data-list-register-values  x 
+2023-03-06 18:14:19,107 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'register-values': [{'number': '0', 'value': '0x400d60e7'},
+                                  {'number': '1', 'value': '0x800e65c1'},
+                                  {'number': '2', 'value': '0x3ffb4e00'},
+                                  {'number': '3', 'value': '0x3ffe46b8'},
+                                  {'number': '4', 'value': '0x3ffe46b8'},
+                                  {'number': '5', 'value': '0x2'},
+                                  {'number': '6', 'value': '0xfffffffe'},
+                                  {'number': '7', 'value': '0x3ffb2460'},
+                                  {'number': '8', 'value': '0x3ffb2740'},
+                                  {'number': '9', 'value': '0x3ffe46b4'},
+                                  {'number': '10', 'value': '0x800'},
+                                  {'number': '11', 'value': '0x3ffe43b4'},
+                                  {'number': '12', 'value': '0x3ffe46bc'},
+                                  {'number': '13', 'value': '0x800'},
+                                  {'number': '14', 'value': '0x60023'},
+                                  {'number': '15', 'value': '0x0'},
+                                  {'number': '16', 'value': '0xcdcd'},
+                                  {'number': '17', 'value': '0x11'},
+                                  {'number': '18', 'value': '0x10'},
+                                  {'number': '19', 'value': '0x3ffe43b8'},
+                                  {'number': '20', 'value': '0xc'},
+                                  {'number': '21', 'value': '0x3ffe4364'},
+                                  {'number': '22', 'value': '0x4'},
+                                  {'number': '23', 'value': '0xffffffe0'},
+                                  {'number': '24', 'value': '0x0'},
+                                  {'number': '25', 'value': '0x800883b0'},
+                                  {'number': '26', 'value': '0x3ffb4ea0'},
+                                  {'number': '27', 'value': '0x0'},
+                                  {'number': '28', 'value': '0x0'},
+                                  {'number': '29', 'value': '0x0'},
+                                  {'number': '30', 'value': '0x0'},
+                                  {'number': '31', 'value': '0x1'},
+                                  {'number': '32', 'value': '0x0'},
+                                  {'number': '33', 'value': '0x800e6117'},
+                                  {'number': '34', 'value': '0x3ffb4e80'},
+                                  {'number': '35', 'value': '0x0'},
+                                  {'number': '36', 'value': '0x1'},
+                                  {'number': '37', 'value': '0x60023'},
+                                  {'number': '38', 'value': '0x1'},
+                                  {'number': '39', 'value': '0xfd'},
+                                  {'number': '40', 'value': '0xcdcd'},
+                                  {'number': '41', 'value': '0x4008bb5c'},
+                                  {'number': '42', 'value': '0x3ffb4e60'},
+                                  {'number': '43', 'value': '0x3ffe4350'},
+                                  {'number': '44', 'value': '0x3ffae8e0'},
+                                  {'number': '45', 'value': '0x60020'},
+                                  {'number': '46', 'value': '0x60023'},
+                                  {'number': '47', 'value': '0x400d3c68'},
+                                  {'number': '48', 'value': '0xcdcd'},
+                                  {'number': '49', 'value': '0x800d2558'},
+                                  {'number': '50', 'value': '0x3ffb4e40'},
+                                  {'number': '51', 'value': '0x3ffe4350'},
+                                  {'number': '52', 'value': '0x1bc9c'},
+                                  {'number': '53', 'value': '0x60020'},
+                                  {'number': '54', 'value': '0x60023'},
+                                  {'number': '55', 'value': '0x0'},
+                                  {'number': '56', 'value': '0xcdcd'},
+                                  {'number': '57', 'value': '0x800e6154'},
+                                  {'number': '58', 'value': '0x3ffb4e20'},
+                                  {'number': '59', 'value': '0x3ffe4350'},
+                                  {'number': '60', 'value': '0x1bc9c'},
+                                  {'number': '61', 'value': '0x0'},
+                                  {'number': '62', 'value': '0x3ffe4364'},
+                                  {'number': '63', 'value': '0x0'},
+                                  {'number': '64', 'value': '0x1'},
+                                  {'number': '65', 'value': '0x0'},
+                                  {'number': '66', 'value': '0x0'},
+                                  {'number': '67', 'value': '0x0'},
+                                  {'number': '68', 'value': '0x15'},
+                                  {'number': '69', 'value': '0x8'},
+                                  {'number': '70', 'value': '0x140'},
+                                  {'number': '71', 'value': '0xc2bcfffe'},
+                                  {'number': '72', 'value': '0x1cc5fe96'},
+                                  {'number': '73', 'value': '0x60820'},
+                                  {'number': '74', 'value': '0x3ffacb98'},
+                                  {'number': '75', 'value': '0x0'},
+                                  {'number': '76', 'value': '0xb33fffff'},
+                                  {'number': '77', 'value': '0x0'},
+                                  {'number': '78', 'value': '0x0'},
+                                  {'number': '79', 'value': '0x0'},
+                                  {'number': '80', 'value': '0x0'},
+                                  {'number': '81', 'value': '0x0'},
+                                  {'number': '82', 'value': '0x0'},
+                                  {'number': '83', 'value': '0x0'},
+                                  {'number': '84', 'value': '0x0'},
+                                  {'number': '85', 'value': '0x0'},
+                                  {'number': '86', 'value': '0x0'},
+                                  {'number': '87', 'value': '0x0'},
+                                  {'number': '88', 'value': '0x0'},
+                                  {'number': '89', 'value': '0x0'},
+                                  {'number': '90', 'value': '0x0'},
+                                  {'number': '91', 'value': '0x0'},
+                                  {'number': '92', 'value': '0x0'},
+                                  {'number': '93', 'value': '0x0'},
+                                  {'number': '94', 'value': '0x0'},
+                                  {'number': '95', 'value': '0x0'},
+                                  {'number': '96', 'value': '0x0'},
+                                  {'number': '97', 'value': '0x0'},
+                                  {'number': '98', 'value': '0x0'},
+                                  {'number': '99', 'value': '0x0'},
+                                  {'number': '100', 'value': '0x0'},
+                                  {'number': '101', 'value': '0x0'},
+                                  {'number': '102', 'value': '0x0'},
+                                  {'number': '103', 'value': '0x0'},
+                                  {'number': '104', 'value': '0x0'},
+                                  {'number': '105', 'value': '0x0'},
+                                  {'number': '106', 'value': '0x0'},
+                                  {'number': '107', 'value': '0x0'},
+                                  {'number': '108', 'value': '0x15'},
+                                  {'number': '109', 'value': '0x0'},
+                                  {'number': '110', 'value': '0x0'},
+                                  {'number': '111', 'value': '0x0'},
+                                  {'number': '112', 'value': '0x0'},
+                                  {'number': '113', 'value': '0x0'},
+                                  {'number': '114', 'value': '0x0'},
+                                  {'number': '115', 'value': '0x0'},
+                                  {'number': '116', 'value': '0x400d1ffa'},
+                                  {'number': '117', 'value': '0x0'},
+                                  {'number': '118', 'value': '0x0'},
+                                  {'number': '119', 'value': '0x0'},
+                                  {'number': '120', 'value': '0x0'},
+                                  {'number': '121', 'value': '0x0'},
+                                  {'number': '122', 'value': '0x0'},
+                                  {'number': '123', 'value': '0x0'},
+                                  {'number': '124', 'value': '0x0'},
+                                  {'number': '125', 'value': '0x0'},
+                                  {'number': '126', 'value': '0x0'},
+                                  {'number': '127', 'value': '0x0'},
+                                  {'number': '128', 'value': '0x0'},
+                                  {'number': '129', 'value': '0x0'},
+                                  {'number': '130', 'value': '0x3ffb4d90'},
+                                  {'number': '131', 'value': '0x40000954'},
+                                  {'number': '132', 'value': '0x40000a28'},
+                                  {'number': '133', 'value': '0x40000af8'},
+                                  {'number': '134', 'value': '0x40000c68'},
+                                  {'number': '135', 'value': '0x0'},
+                                  {'number': '136', 'value': '0x0'},
+                                  {'number': '137', 'value': '0x0'},
+                                  {'number': '138', 'value': '0x0'},
+                                  {'number': '139', 'value': '0x0'},
+                                  {'number': '140', 'value': '0x0'},
+                                  {'number': '141', 'value': '0x1300024c'},
+                                  {'number': '142', 'value': '0x40080000'},
+                                  {'number': '143', 'value': '0x4'},
+                                  {'number': '144', 'value': '0x0'},
+                                  {'number': '145', 'value': '0x18192c0d'},
+                                  {'number': '146', 'value': '0xcdcd'},
+                                  {'number': '147', 'value': '0x0'},
+                                  {'number': '148', 'value': '0x0'},
+                                  {'number': '149', 'value': '0x0'},
+                                  {'number': '150', 'value': '0x182d1bcd'},
+                                  {'number': '151', 'value': '0x0'},
+                                  {'number': '152', 'value': '0x0'},
+                                  {'number': '153', 'value': '0x0'},
+                                  {'number': '154', 'value': '0x0'},
+                                  {'number': '155', 'value': '0x0'},
+                                  {'number': '156', 'value': '0x0'},
+                                  {'number': '157', 'value': '0x800e6117'},
+                                  {'number': '158', 'value': '0x3ffb4e80'},
+                                  {'number': '159', 'value': '0x0'},
+                                  {'number': '160', 'value': '0x1'},
+                                  {'number': '161', 'value': '0x60023'},
+                                  {'number': '162', 'value': '0x1'},
+                                  {'number': '163', 'value': '0xfd'},
+                                  {'number': '164', 'value': '0xcdcd'},
+                                  {'number': '165', 'value': '0x4008bb5c'},
+                                  {'number': '166', 'value': '0x3ffb4e60'},
+                                  {'number': '167', 'value': '0x3ffe4350'},
+                                  {'number': '168', 'value': '0x3ffae8e0'},
+                                  {'number': '169', 'value': '0x60020'},
+                                  {'number': '170', 'value': '0x60023'},
+                                  {'number': '171', 'value': '0x400d3c68'},
+                                  {'number': '172', 'value': '0xcdcd'},
+                                  {'number': '173', 'value': '0x0'},
+                                  {'number': '174', 'value': '0x0'},
+                                  {'number': '175', 'value': '0x0'},
+                                  {'number': '176', 'value': '0x0'},
+                                  {'number': '177', 'value': '0x0'},
+                                  {'number': '178', 'value': '0x0'},
+                                  {'number': '179', 'value': '0x0'},
+                                  {'number': '180', 'value': '0x0'},
+                                  {'number': '181', 'value': '0x0'},
+                                  {'number': '182', 'value': '0x0'},
+                                  {'number': '183', 'value': '0x0'},
+                                  {'number': '184', 'value': '0x0'},
+                                  {'number': '185', 'value': '0x0'},
+                                  {'number': '186', 'value': '0x0'},
+                                  {'number': '187', 'value': '0x0'},
+                                  {'number': '188', 'value': '0x0'},
+                                  {'number': '189', 'value': '0x0'},
+                                  {'number': '190', 'value': '0x1'},
+                                  {'number': '191', 'value': '0x1'},
+                                  {'number': '192', 'value': '0x0'},
+                                  {'number': '193', 'value': '0x2'},
+                                  {'number': '194', 'value': '0x8'},
+                                  {'number': '195', 'value': '0x0'},
+                                  {'number': '196', 'value': '0x0'},
+                                  {'number': '197', 'value': '0x0'},
+                                  {'number': '198', 'value': '0x0'},
+                                  {'number': '199', 'value': '0x0'},
+                                  {'number': '200', 'value': '0x0'},
+                                  {'number': '201', 'value': '0x0'},
+                                  {'number': '202', 'value': '0x0'},
+                                  {'number': '203', 'value': '0x0'},
+                                  {'number': '204', 'value': '0x0'},
+                                  {'number': '205', 'value': '0x0'},
+                                  {'number': '206', 'value': '0x0'},
+                                  {'number': '207', 'value': '0x0'},
+                                  {'number': '208', 'value': '0x0'},
+                                  {'number': '209', 'value': '0x0'},
+                                  {'number': '210', 'value': '0x0'},
+                                  {'number': '211', 'value': '0x0'}]},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,110 - Gdb - DEBUG - RESULT: done {'register-values': [{'number': '0', 'value': '0x400d60e7'},
+                     {'number': '1', 'value': '0x800e65c1'},
+                     {'number': '2', 'value': '0x3ffb4e00'},
+                     {'number': '3', 'value': '0x3ffe46b8'},
+                     {'number': '4', 'value': '0x3ffe46b8'},
+                     {'number': '5', 'value': '0x2'},
+                     {'number': '6', 'value': '0xfffffffe'},
+                     {'number': '7', 'value': '0x3ffb2460'},
+                     {'number': '8', 'value': '0x3ffb2740'},
+                     {'number': '9', 'value': '0x3ffe46b4'},
+                     {'number': '10', 'value': '0x800'},
+                     {'number': '11', 'value': '0x3ffe43b4'},
+                     {'number': '12', 'value': '0x3ffe46bc'},
+                     {'number': '13', 'value': '0x800'},
+                     {'number': '14', 'value': '0x60023'},
+                     {'number': '15', 'value': '0x0'},
+                     {'number': '16', 'value': '0xcdcd'},
+                     {'number': '17', 'value': '0x11'},
+                     {'number': '18', 'value': '0x10'},
+                     {'number': '19', 'value': '0x3ffe43b8'},
+                     {'number': '20', 'value': '0xc'},
+                     {'number': '21', 'value': '0x3ffe4364'},
+                     {'number': '22', 'value': '0x4'},
+                     {'number': '23', 'value': '0xffffffe0'},
+                     {'number': '24', 'value': '0x0'},
+                     {'number': '25', 'value': '0x800883b0'},
+                     {'number': '26', 'value': '0x3ffb4ea0'},
+                     {'number': '27', 'value': '0x0'},
+                     {'number': '28', 'value': '0x0'},
+                     {'number': '29', 'value': '0x0'},
+                     {'number': '30', 'value': '0x0'},
+                     {'number': '31', 'value': '0x1'},
+                     {'number': '32', 'value': '0x0'},
+                     {'number': '33', 'value': '0x800e6117'},
+                     {'number': '34', 'value': '0x3ffb4e80'},
+                     {'number': '35', 'value': '0x0'},
+                     {'number': '36', 'value': '0x1'},
+                     {'number': '37', 'value': '0x60023'},
+                     {'number': '38', 'value': '0x1'},
+                     {'number': '39', 'value': '0xfd'},
+                     {'number': '40', 'value': '0xcdcd'},
+                     {'number': '41', 'value': '0x4008bb5c'},
+                     {'number': '42', 'value': '0x3ffb4e60'},
+                     {'number': '43', 'value': '0x3ffe4350'},
+                     {'number': '44', 'value': '0x3ffae8e0'},
+                     {'number': '45', 'value': '0x60020'},
+                     {'number': '46', 'value': '0x60023'},
+                     {'number': '47', 'value': '0x400d3c68'},
+                     {'number': '48', 'value': '0xcdcd'},
+                     {'number': '49', 'value': '0x800d2558'},
+                     {'number': '50', 'value': '0x3ffb4e40'},
+                     {'number': '51', 'value': '0x3ffe4350'},
+                     {'number': '52', 'value': '0x1bc9c'},
+                     {'number': '53', 'value': '0x60020'},
+                     {'number': '54', 'value': '0x60023'},
+                     {'number': '55', 'value': '0x0'},
+                     {'number': '56', 'value': '0xcdcd'},
+                     {'number': '57', 'value': '0x800e6154'},
+                     {'number': '58', 'value': '0x3ffb4e20'},
+                     {'number': '59', 'value': '0x3ffe4350'},
+                     {'number': '60', 'value': '0x1bc9c'},
+                     {'number': '61', 'value': '0x0'},
+                     {'number': '62', 'value': '0x3ffe4364'},
+                     {'number': '63', 'value': '0x0'},
+                     {'number': '64', 'value': '0x1'},
+                     {'number': '65', 'value': '0x0'},
+                     {'number': '66', 'value': '0x0'},
+                     {'number': '67', 'value': '0x0'},
+                     {'number': '68', 'value': '0x15'},
+                     {'number': '69', 'value': '0x8'},
+                     {'number': '70', 'value': '0x140'},
+                     {'number': '71', 'value': '0xc2bcfffe'},
+                     {'number': '72', 'value': '0x1cc5fe96'},
+                     {'number': '73', 'value': '0x60820'},
+                     {'number': '74', 'value': '0x3ffacb98'},
+                     {'number': '75', 'value': '0x0'},
+                     {'number': '76', 'value': '0xb33fffff'},
+                     {'number': '77', 'value': '0x0'},
+                     {'number': '78', 'value': '0x0'},
+                     {'number': '79', 'value': '0x0'},
+                     {'number': '80', 'value': '0x0'},
+                     {'number': '81', 'value': '0x0'},
+                     {'number': '82', 'value': '0x0'},
+                     {'number': '83', 'value': '0x0'},
+                     {'number': '84', 'value': '0x0'},
+                     {'number': '85', 'value': '0x0'},
+                     {'number': '86', 'value': '0x0'},
+                     {'number': '87', 'value': '0x0'},
+                     {'number': '88', 'value': '0x0'},
+                     {'number': '89', 'value': '0x0'},
+                     {'number': '90', 'value': '0x0'},
+                     {'number': '91', 'value': '0x0'},
+                     {'number': '92', 'value': '0x0'},
+                     {'number': '93', 'value': '0x0'},
+                     {'number': '94', 'value': '0x0'},
+                     {'number': '95', 'value': '0x0'},
+                     {'number': '96', 'value': '0x0'},
+                     {'number': '97', 'value': '0x0'},
+                     {'number': '98', 'value': '0x0'},
+                     {'number': '99', 'value': '0x0'},
+                     {'number': '100', 'value': '0x0'},
+                     {'number': '101', 'value': '0x0'},
+                     {'number': '102', 'value': '0x0'},
+                     {'number': '103', 'value': '0x0'},
+                     {'number': '104', 'value': '0x0'},
+                     {'number': '105', 'value': '0x0'},
+                     {'number': '106', 'value': '0x0'},
+                     {'number': '107', 'value': '0x0'},
+                     {'number': '108', 'value': '0x15'},
+                     {'number': '109', 'value': '0x0'},
+                     {'number': '110', 'value': '0x0'},
+                     {'number': '111', 'value': '0x0'},
+                     {'number': '112', 'value': '0x0'},
+                     {'number': '113', 'value': '0x0'},
+                     {'number': '114', 'value': '0x0'},
+                     {'number': '115', 'value': '0x0'},
+                     {'number': '116', 'value': '0x400d1ffa'},
+                     {'number': '117', 'value': '0x0'},
+                     {'number': '118', 'value': '0x0'},
+                     {'number': '119', 'value': '0x0'},
+                     {'number': '120', 'value': '0x0'},
+                     {'number': '121', 'value': '0x0'},
+                     {'number': '122', 'value': '0x0'},
+                     {'number': '123', 'value': '0x0'},
+                     {'number': '124', 'value': '0x0'},
+                     {'number': '125', 'value': '0x0'},
+                     {'number': '126', 'value': '0x0'},
+                     {'number': '127', 'value': '0x0'},
+                     {'number': '128', 'value': '0x0'},
+                     {'number': '129', 'value': '0x0'},
+                     {'number': '130', 'value': '0x3ffb4d90'},
+                     {'number': '131', 'value': '0x40000954'},
+                     {'number': '132', 'value': '0x40000a28'},
+                     {'number': '133', 'value': '0x40000af8'},
+                     {'number': '134', 'value': '0x40000c68'},
+                     {'number': '135', 'value': '0x0'},
+                     {'number': '136', 'value': '0x0'},
+                     {'number': '137', 'value': '0x0'},
+                     {'number': '138', 'value': '0x0'},
+                     {'number': '139', 'value': '0x0'},
+                     {'number': '140', 'value': '0x0'},
+                     {'number': '141', 'value': '0x1300024c'},
+                     {'number': '142', 'value': '0x40080000'},
+                     {'number': '143', 'value': '0x4'},
+                     {'number': '144', 'value': '0x0'},
+                     {'number': '145', 'value': '0x18192c0d'},
+                     {'number': '146', 'value': '0xcdcd'},
+                     {'number': '147', 'value': '0x0'},
+                     {'number': '148', 'value': '0x0'},
+                     {'number': '149', 'value': '0x0'},
+                     {'number': '150', 'value': '0x182d1bcd'},
+                     {'number': '151', 'value': '0x0'},
+                     {'number': '152', 'value': '0x0'},
+                     {'number': '153', 'value': '0x0'},
+                     {'number': '154', 'value': '0x0'},
+                     {'number': '155', 'value': '0x0'},
+                     {'number': '156', 'value': '0x0'},
+                     {'number': '157', 'value': '0x800e6117'},
+                     {'number': '158', 'value': '0x3ffb4e80'},
+                     {'number': '159', 'value': '0x0'},
+                     {'number': '160', 'value': '0x1'},
+                     {'number': '161', 'value': '0x60023'},
+                     {'number': '162', 'value': '0x1'},
+                     {'number': '163', 'value': '0xfd'},
+                     {'number': '164', 'value': '0xcdcd'},
+                     {'number': '165', 'value': '0x4008bb5c'},
+                     {'number': '166', 'value': '0x3ffb4e60'},
+                     {'number': '167', 'value': '0x3ffe4350'},
+                     {'number': '168', 'value': '0x3ffae8e0'},
+                     {'number': '169', 'value': '0x60020'},
+                     {'number': '170', 'value': '0x60023'},
+                     {'number': '171', 'value': '0x400d3c68'},
+                     {'number': '172', 'value': '0xcdcd'},
+                     {'number': '173', 'value': '0x0'},
+                     {'number': '174', 'value': '0x0'},
+                     {'number': '175', 'value': '0x0'},
+                     {'number': '176', 'value': '0x0'},
+                     {'number': '177', 'value': '0x0'},
+                     {'number': '178', 'value': '0x0'},
+                     {'number': '179', 'value': '0x0'},
+                     {'number': '180', 'value': '0x0'},
+                     {'number': '181', 'value': '0x0'},
+                     {'number': '182', 'value': '0x0'},
+                     {'number': '183', 'value': '0x0'},
+                     {'number': '184', 'value': '0x0'},
+                     {'number': '185', 'value': '0x0'},
+                     {'number': '186', 'value': '0x0'},
+                     {'number': '187', 'value': '0x0'},
+                     {'number': '188', 'value': '0x0'},
+                     {'number': '189', 'value': '0x0'},
+                     {'number': '190', 'value': '0x1'},
+                     {'number': '191', 'value': '0x1'},
+                     {'number': '192', 'value': '0x0'},
+                     {'number': '193', 'value': '0x2'},
+                     {'number': '194', 'value': '0x8'},
+                     {'number': '195', 'value': '0x0'},
+                     {'number': '196', 'value': '0x0'},
+                     {'number': '197', 'value': '0x0'},
+                     {'number': '198', 'value': '0x0'},
+                     {'number': '199', 'value': '0x0'},
+                     {'number': '200', 'value': '0x0'},
+                     {'number': '201', 'value': '0x0'},
+                     {'number': '202', 'value': '0x0'},
+                     {'number': '203', 'value': '0x0'},
+                     {'number': '204', 'value': '0x0'},
+                     {'number': '205', 'value': '0x0'},
+                     {'number': '206', 'value': '0x0'},
+                     {'number': '207', 'value': '0x0'},
+                     {'number': '208', 'value': '0x0'},
+                     {'number': '209', 'value': '0x0'},
+                     {'number': '210', 'value': '0x0'},
+                     {'number': '211', 'value': '0x0'}]}
+2023-03-06 18:14:19,111 - Debug Adapter(Command Processor) - DEBUG - Processed command: scopes
+2023-03-06 18:14:19,111 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 8, "success": true, "command": "scopes", "body": {"scopes": [{"name": "Locals", "variablesReference": 12, "expensive": false, "presentationHint": "locals", "source": {}}, {"name": "Registers", "variablesReference": 24, "expensive": false, "presentationHint": "registers", "source": {}}]}, "seq": 32}
+
+2023-03-06 18:14:19,112 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: scopes\n", "source": {}}, "seq": 33}
+
+2023-03-06 18:14:19,123 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 86\\r\\n'<<
+
+2023-03-06 18:14:19,123 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:19,123 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "format": {},
+        "variablesReference": 12
+    },
+    "command": "variables",
+    "seq": 9,
+    "type": "request"
+}
+2023-03-06 18:14:19,124 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"format\": {},\n        \"variablesReference\": 12\n    },\n    \"command\": \"variables\",\n    \"seq\": 9,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 34}
+
+2023-03-06 18:14:19,124 - Gdb - DEBUG - MI->: -thread-select 1
+2023-03-06 18:14:19,128 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'frame': {'addr': '0x400d60e7',
+                        'arch': 'xtensa',
+                        'args': [],
+                        'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+                        'func': 'app_main',
+                        'level': '0',
+                        'line': '25'},
+              'new-thread-id': '1'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,128 - Gdb - DEBUG - RESULT: done {'frame': {'addr': '0x400d60e7',
+           'arch': 'xtensa',
+           'args': [],
+           'file': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'fullname': '/home/ok-home/myex/gpio_switch/components/gpio_sw/unity_runer/main/unity_runer.c',
+           'func': 'app_main',
+           'level': '0',
+           'line': '25'},
+ 'new-thread-id': '1'}
+2023-03-06 18:14:19,128 - Gdb - DEBUG - MI->: -stack-select-frame 0
+2023-03-06 18:14:19,129 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,130 - Gdb - DEBUG - RESULT: done None
+2023-03-06 18:14:19,130 - Gdb - DEBUG - MI->: -stack-list-locals 1
+2023-03-06 18:14:19,131 - Gdb - DEBUG - MI<-:
+[{'message': 'done',
+  'payload': {'locals': []},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:14:19,131 - Gdb - DEBUG - RESULT: done {'locals': []}
+2023-03-06 18:14:19,131 - Debug Adapter(Command Processor) - DEBUG - Processed command: variables
+2023-03-06 18:14:19,132 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 9, "success": true, "command": "variables", "body": {"variables": []}, "seq": 35}
+
+2023-03-06 18:14:19,132 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: variables\n", "source": {}}, "seq": 36}
+
+2023-03-06 18:14:21,769 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 75\\r\\n'<<
+
+2023-03-06 18:14:21,769 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:14:21,770 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "threadId": 1
+    },
+    "command": "continue",
+    "seq": 10,
+    "type": "request"
+}
+2023-03-06 18:14:21,770 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"threadId\": 1\n    },\n    \"command\": \"continue\",\n    \"seq\": 10,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 37}
+
+2023-03-06 18:14:21,770 - Gdb - DEBUG - MI->: -exec-continue --all
+2023-03-06 18:14:21,772 - Gdb - DEBUG - MI<-:
+[{'message': 'running',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'},
+ {'message': 'running',
+  'payload': {'thread-id': 'all'},
+  'stream': 'stdout',
+  'token': None,
+  'type': 'notify'}]
+2023-03-06 18:14:21,772 - Gdb - DEBUG - RESULT: running None
+2023-03-06 18:14:22,273 - Gdb - INFO - NOTIFY: running {'thread-id': 'all'}
+2023-03-06 18:14:22,273 - Gdb - DEBUG - new target state 2
+2023-03-06 18:14:22,274 - Debug Adapter(Command Processor) - DEBUG - Processed command: continue
+2023-03-06 18:14:22,274 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "response", "request_seq": 10, "success": true, "command": "continue", "body": {"allThreadsContinued": true}, "seq": 38}
+
+2023-03-06 18:14:22,275 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Processed command: continue\n", "source": {}}, "seq": 39}
+
+2023-03-06 18:14:22,374 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:22,374 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 40}
+
+2023-03-06 18:14:22,876 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:22,876 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 41}
+
+2023-03-06 18:14:22,977 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:22,978 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 42}
+
+2023-03-06 18:14:23,479 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:23,480 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 43}
+
+2023-03-06 18:14:23,581 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:23,581 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 44}
+
+2023-03-06 18:14:24,083 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:24,083 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 45}
+
+2023-03-06 18:14:24,184 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:24,185 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 46}
+
+2023-03-06 18:14:24,687 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:24,687 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 47}
+
+2023-03-06 18:14:24,788 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:24,789 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 48}
+
+2023-03-06 18:14:25,290 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:25,290 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 49}
+
+2023-03-06 18:14:25,391 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:25,392 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 50}
+
+2023-03-06 18:14:25,893 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:25,893 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 51}
+
+2023-03-06 18:14:25,994 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:25,995 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 52}
+
+2023-03-06 18:14:26,496 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:26,497 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 53}
+
+2023-03-06 18:14:26,598 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:26,598 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 54}
+
+2023-03-06 18:14:27,100 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:27,101 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 55}
+
+2023-03-06 18:14:27,201 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:27,202 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 56}
+
+2023-03-06 18:14:27,703 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:27,704 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 57}
+
+2023-03-06 18:14:27,805 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:27,805 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 58}
+
+2023-03-06 18:14:28,306 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:28,306 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 59}
+
+2023-03-06 18:14:28,408 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:28,408 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 60}
+
+2023-03-06 18:14:28,909 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:28,910 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 61}
+
+2023-03-06 18:14:29,011 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:29,013 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 62}
+
+2023-03-06 18:14:29,514 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:29,515 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 63}
+
+2023-03-06 18:14:29,616 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:29,617 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 64}
+
+2023-03-06 18:14:30,118 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:30,119 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 65}
+
+2023-03-06 18:14:30,220 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:30,220 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 66}
+
+2023-03-06 18:14:30,721 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:30,722 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 67}
+
+2023-03-06 18:14:30,823 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:30,823 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 68}
+
+2023-03-06 18:14:31,325 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:31,325 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 69}
+
+2023-03-06 18:14:31,426 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:31,427 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 70}
+
+2023-03-06 18:14:31,928 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:31,929 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 71}
+
+2023-03-06 18:14:32,030 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:32,030 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 72}
+
+2023-03-06 18:14:32,532 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:32,533 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 73}
+
+2023-03-06 18:14:32,633 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:32,633 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 74}
+
+2023-03-06 18:14:33,135 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:33,135 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 75}
+
+2023-03-06 18:14:33,236 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:33,237 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 76}
+
+2023-03-06 18:14:33,738 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:33,739 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 77}
+
+2023-03-06 18:14:33,840 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:33,840 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 78}
+
+2023-03-06 18:14:34,342 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:34,342 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 79}
+
+2023-03-06 18:14:34,443 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:34,444 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 80}
+
+2023-03-06 18:14:34,945 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:34,945 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 81}
+
+2023-03-06 18:14:35,047 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:35,047 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 82}
+
+2023-03-06 18:14:35,548 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:35,549 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 83}
+
+2023-03-06 18:14:35,650 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:35,650 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 84}
+
+2023-03-06 18:14:36,152 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:36,152 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 85}
+
+2023-03-06 18:14:36,254 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:36,254 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 86}
+
+2023-03-06 18:14:36,755 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:36,756 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 87}
+
+2023-03-06 18:14:36,857 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:36,857 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 88}
+
+2023-03-06 18:14:37,359 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:37,359 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 89}
+
+2023-03-06 18:14:37,460 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:37,461 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 90}
+
+2023-03-06 18:14:37,962 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:37,962 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 91}
+
+2023-03-06 18:14:38,063 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:38,064 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 92}
+
+2023-03-06 18:14:38,565 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:38,566 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 93}
+
+2023-03-06 18:14:38,667 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:38,668 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 94}
+
+2023-03-06 18:14:39,169 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:39,169 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 95}
+
+2023-03-06 18:14:39,270 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:39,272 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 96}
+
+2023-03-06 18:14:39,773 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:39,773 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 97}
+
+2023-03-06 18:14:39,874 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:39,875 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 98}
+
+2023-03-06 18:14:40,376 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:40,376 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 99}
+
+2023-03-06 18:14:40,477 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:40,477 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 100}
+
+2023-03-06 18:14:40,979 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:40,979 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 101}
+
+2023-03-06 18:14:41,080 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:41,080 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 102}
+
+2023-03-06 18:14:41,581 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:41,582 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 103}
+
+2023-03-06 18:14:41,683 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:41,683 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 104}
+
+2023-03-06 18:14:42,184 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:42,184 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 105}
+
+2023-03-06 18:14:42,285 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:42,285 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 106}
+
+2023-03-06 18:14:42,787 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:42,787 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 107}
+
+2023-03-06 18:14:42,888 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:42,888 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 108}
+
+2023-03-06 18:14:43,389 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:43,389 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 109}
+
+2023-03-06 18:14:43,490 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:43,490 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 110}
+
+2023-03-06 18:14:43,991 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:43,992 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 111}
+
+2023-03-06 18:14:44,093 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:44,093 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 112}
+
+2023-03-06 18:14:44,594 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:44,594 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 113}
+
+2023-03-06 18:14:44,695 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:44,695 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 114}
+
+2023-03-06 18:14:45,197 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:45,197 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 115}
+
+2023-03-06 18:14:45,298 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:45,299 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 116}
+
+2023-03-06 18:14:45,800 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:45,800 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 117}
+
+2023-03-06 18:14:45,901 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:45,901 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 118}
+
+2023-03-06 18:14:46,402 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:46,402 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 119}
+
+2023-03-06 18:14:46,503 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:46,503 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 120}
+
+2023-03-06 18:14:47,005 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:47,005 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 121}
+
+2023-03-06 18:14:47,106 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:47,106 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 122}
+
+2023-03-06 18:14:47,607 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:47,607 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 123}
+
+2023-03-06 18:14:47,708 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:47,708 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 124}
+
+2023-03-06 18:14:48,210 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:48,210 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 125}
+
+2023-03-06 18:14:48,311 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:48,311 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 126}
+
+2023-03-06 18:14:48,813 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:48,813 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 127}
+
+2023-03-06 18:14:48,914 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:48,914 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 128}
+
+2023-03-06 18:14:49,416 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:49,416 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 129}
+
+2023-03-06 18:14:49,517 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:49,517 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 130}
+
+2023-03-06 18:14:50,018 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:50,018 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 131}
+
+2023-03-06 18:14:50,119 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:50,120 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 132}
+
+2023-03-06 18:14:50,621 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:50,621 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 133}
+
+2023-03-06 18:14:50,722 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:50,722 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 134}
+
+2023-03-06 18:14:51,223 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:51,224 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 135}
+
+2023-03-06 18:14:51,325 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:51,325 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 136}
+
+2023-03-06 18:14:51,827 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:51,827 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 137}
+
+2023-03-06 18:14:51,928 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:51,928 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 138}
+
+2023-03-06 18:14:52,429 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:52,429 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 139}
+
+2023-03-06 18:14:52,530 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:52,530 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 140}
+
+2023-03-06 18:14:53,032 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:53,032 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 141}
+
+2023-03-06 18:14:53,133 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:53,133 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 142}
+
+2023-03-06 18:14:53,634 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:53,634 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 143}
+
+2023-03-06 18:14:53,735 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:53,736 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 144}
+
+2023-03-06 18:14:54,237 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:54,237 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 145}
+
+2023-03-06 18:14:54,338 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:54,339 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 146}
+
+2023-03-06 18:14:54,841 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:54,841 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 147}
+
+2023-03-06 18:14:54,942 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:54,942 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 148}
+
+2023-03-06 18:14:55,443 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:55,444 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 149}
+
+2023-03-06 18:14:55,545 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:55,545 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 150}
+
+2023-03-06 18:14:56,046 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:56,046 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 151}
+
+2023-03-06 18:14:56,147 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:56,147 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 152}
+
+2023-03-06 18:14:56,649 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:56,649 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 153}
+
+2023-03-06 18:14:56,750 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:56,750 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 154}
+
+2023-03-06 18:14:57,252 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:57,252 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 155}
+
+2023-03-06 18:14:57,353 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:57,353 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 156}
+
+2023-03-06 18:14:57,855 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:57,855 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 157}
+
+2023-03-06 18:14:57,956 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:57,956 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 158}
+
+2023-03-06 18:14:58,457 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:58,457 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 159}
+
+2023-03-06 18:14:58,559 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:58,559 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 160}
+
+2023-03-06 18:14:59,060 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:59,060 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 161}
+
+2023-03-06 18:14:59,161 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:59,161 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 162}
+
+2023-03-06 18:14:59,663 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:14:59,663 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 163}
+
+2023-03-06 18:14:59,765 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:14:59,765 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 164}
+
+2023-03-06 18:15:00,267 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:00,267 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 165}
+
+2023-03-06 18:15:00,367 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:00,368 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 166}
+
+2023-03-06 18:15:00,869 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:00,869 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 167}
+
+2023-03-06 18:15:00,970 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:00,970 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 168}
+
+2023-03-06 18:15:01,471 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:01,471 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 169}
+
+2023-03-06 18:15:01,573 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:01,573 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 170}
+
+2023-03-06 18:15:02,074 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:02,075 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 171}
+
+2023-03-06 18:15:02,175 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:02,176 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 172}
+
+2023-03-06 18:15:02,677 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:02,677 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 173}
+
+2023-03-06 18:15:02,778 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:02,778 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 174}
+
+2023-03-06 18:15:03,280 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:03,280 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 175}
+
+2023-03-06 18:15:03,381 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:03,382 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 176}
+
+2023-03-06 18:15:03,883 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:03,883 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 177}
+
+2023-03-06 18:15:03,984 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:03,984 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 178}
+
+2023-03-06 18:15:04,486 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:04,486 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 179}
+
+2023-03-06 18:15:04,587 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:04,587 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 180}
+
+2023-03-06 18:15:05,088 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:05,088 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 181}
+
+2023-03-06 18:15:05,189 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:05,189 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 182}
+
+2023-03-06 18:15:05,690 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:05,691 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 183}
+
+2023-03-06 18:15:05,792 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:05,792 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 184}
+
+2023-03-06 18:15:06,293 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:06,293 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 185}
+
+2023-03-06 18:15:06,394 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:06,394 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 186}
+
+2023-03-06 18:15:06,896 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:06,896 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 187}
+
+2023-03-06 18:15:06,997 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:06,997 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 188}
+
+2023-03-06 18:15:07,498 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:07,498 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 189}
+
+2023-03-06 18:15:07,599 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:07,600 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 190}
+
+2023-03-06 18:15:08,101 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:08,101 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 191}
+
+2023-03-06 18:15:08,202 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:08,202 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 192}
+
+2023-03-06 18:15:08,703 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:08,703 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 193}
+
+2023-03-06 18:15:08,804 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:08,804 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 194}
+
+2023-03-06 18:15:09,306 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:09,306 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 195}
+
+2023-03-06 18:15:09,407 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:09,407 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 196}
+
+2023-03-06 18:15:09,909 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:09,910 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 197}
+
+2023-03-06 18:15:10,011 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:10,011 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 198}
+
+2023-03-06 18:15:10,512 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:10,512 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 199}
+
+2023-03-06 18:15:10,613 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:10,613 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 200}
+
+2023-03-06 18:15:11,115 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:11,115 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 201}
+
+2023-03-06 18:15:11,216 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:11,216 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 202}
+
+2023-03-06 18:15:11,717 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:11,717 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 203}
+
+2023-03-06 18:15:11,818 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:11,819 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 204}
+
+2023-03-06 18:15:12,320 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:12,321 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 205}
+
+2023-03-06 18:15:12,423 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:12,424 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 206}
+
+2023-03-06 18:15:12,926 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:12,927 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 207}
+
+2023-03-06 18:15:13,044 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:13,044 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 208}
+
+2023-03-06 18:15:13,545 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:13,545 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 209}
+
+2023-03-06 18:15:13,646 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:13,646 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 210}
+
+2023-03-06 18:15:14,147 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:14,147 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 211}
+
+2023-03-06 18:15:14,248 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:14,248 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 212}
+
+2023-03-06 18:15:14,749 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:14,750 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 213}
+
+2023-03-06 18:15:14,851 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:14,851 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 214}
+
+2023-03-06 18:15:15,352 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:15,352 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 215}
+
+2023-03-06 18:15:15,453 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:15,453 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 216}
+
+2023-03-06 18:15:15,954 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:15,955 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 217}
+
+2023-03-06 18:15:16,055 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:16,056 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 218}
+
+2023-03-06 18:15:16,557 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:16,557 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 219}
+
+2023-03-06 18:15:16,658 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:16,658 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 220}
+
+2023-03-06 18:15:17,159 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:17,160 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 221}
+
+2023-03-06 18:15:17,261 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:17,261 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 222}
+
+2023-03-06 18:15:17,762 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:17,762 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 223}
+
+2023-03-06 18:15:17,865 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:17,866 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 224}
+
+2023-03-06 18:15:18,368 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:18,368 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 225}
+
+2023-03-06 18:15:18,469 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:18,469 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 226}
+
+2023-03-06 18:15:18,970 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:18,971 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 227}
+
+2023-03-06 18:15:19,072 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:19,072 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 228}
+
+2023-03-06 18:15:19,574 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:19,574 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 229}
+
+2023-03-06 18:15:19,675 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:19,675 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 230}
+
+2023-03-06 18:15:20,176 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:20,176 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 231}
+
+2023-03-06 18:15:20,277 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:20,277 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 232}
+
+2023-03-06 18:15:20,779 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:20,779 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 233}
+
+2023-03-06 18:15:20,882 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:20,883 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 234}
+
+2023-03-06 18:15:21,384 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:21,384 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 235}
+
+2023-03-06 18:15:21,485 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:21,485 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 236}
+
+2023-03-06 18:15:21,987 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:21,987 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 237}
+
+2023-03-06 18:15:22,088 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:22,088 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 238}
+
+2023-03-06 18:15:22,589 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:22,589 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 239}
+
+2023-03-06 18:15:22,690 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:22,690 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 240}
+
+2023-03-06 18:15:23,191 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:23,192 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 241}
+
+2023-03-06 18:15:23,293 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:23,293 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 242}
+
+2023-03-06 18:15:23,794 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:23,794 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 243}
+
+2023-03-06 18:15:23,896 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:23,896 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 244}
+
+2023-03-06 18:15:24,397 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:24,398 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 245}
+
+2023-03-06 18:15:24,498 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:24,499 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 246}
+
+2023-03-06 18:15:25,000 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:25,000 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 247}
+
+2023-03-06 18:15:25,101 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:25,101 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 248}
+
+2023-03-06 18:15:25,602 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:25,602 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 249}
+
+2023-03-06 18:15:25,703 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:25,704 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 250}
+
+2023-03-06 18:15:26,205 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:26,205 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 251}
+
+2023-03-06 18:15:26,306 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:26,306 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 252}
+
+2023-03-06 18:15:26,808 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:26,808 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 253}
+
+2023-03-06 18:15:26,909 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:26,909 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 254}
+
+2023-03-06 18:15:27,410 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:27,411 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 255}
+
+2023-03-06 18:15:27,511 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:27,512 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 256}
+
+2023-03-06 18:15:28,013 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:28,013 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 257}
+
+2023-03-06 18:15:28,114 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:28,114 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 258}
+
+2023-03-06 18:15:28,615 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:28,616 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 259}
+
+2023-03-06 18:15:28,716 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:28,717 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 260}
+
+2023-03-06 18:15:29,218 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:29,218 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 261}
+
+2023-03-06 18:15:29,319 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:29,319 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 262}
+
+2023-03-06 18:15:29,820 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:29,821 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 263}
+
+2023-03-06 18:15:29,922 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:29,922 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 264}
+
+2023-03-06 18:15:30,423 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:30,423 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 265}
+
+2023-03-06 18:15:30,524 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:30,524 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 266}
+
+2023-03-06 18:15:31,025 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:31,026 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 267}
+
+2023-03-06 18:15:31,127 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:31,127 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 268}
+
+2023-03-06 18:15:31,628 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:31,628 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 269}
+
+2023-03-06 18:15:31,729 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:31,730 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 270}
+
+2023-03-06 18:15:32,231 - Debug Adapter (main) - DEBUG - Poll target restart
+2023-03-06 18:15:32,231 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target restart\n", "source": {}}, "seq": 271}
+
+2023-03-06 18:15:32,332 - Debug Adapter (main) - DEBUG - Poll target. Wait state 1
+2023-03-06 18:15:32,333 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Poll target. Wait state 1\n", "source": {}}, "seq": 272}
+
+2023-03-06 18:15:32,723 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'Content-Length: 105\\r\\n'<<
+
+2023-03-06 18:15:32,724 - Debug Adapter (ReaderThread) - DEBUG - read line: >>b'\\r\\n'<<
+
+2023-03-06 18:15:32,724 - Debug Adapter(Command Processor) - DEBUG - Got json: {
+    "arguments": {
+        "restart": false,
+        "terminateDebuggee": true
+    },
+    "command": "disconnect",
+    "seq": 11,
+    "type": "request"
+}
+2023-03-06 18:15:32,724 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Got json: {\n    \"arguments\": {\n        \"restart\": false,\n        \"terminateDebuggee\": true\n    },\n    \"command\": \"disconnect\",\n    \"seq\": 11,\n    \"type\": \"request\"\n}\n", "source": {}}, "seq": 273}
+
+2023-03-06 18:15:32,725 - Debug Adapter (main) - DEBUG - Adapter is Stopping...
+2023-03-06 18:15:32,725 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Debug Adapter stopped\n", "source": {}}, "seq": 274}
+
+2023-03-06 18:15:32,726 - Debug Adapter (main) - DEBUG - Stopping target poller
+2023-03-06 18:15:32,726 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Adapter is Stopping...\n", "source": {}}, "seq": 275}
+
+2023-03-06 18:15:32,727 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Stopping target poller\n", "source": {}}, "seq": 276}
+
+2023-03-06 18:15:32,834 - Debug Adapter (main) - DEBUG - Closing the GDB process
+2023-03-06 18:15:32,834 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Closing the GDB process\n", "source": {}}, "seq": 277}
+
+2023-03-06 18:15:32,836 - Gdb - DEBUG - MI->: -gdb-exit
+2023-03-06 18:15:32,837 - Gdb - DEBUG - MI<-:
+[{'message': 'exit',
+  'payload': None,
+  'stream': 'stdout',
+  'token': None,
+  'type': 'result'}]
+2023-03-06 18:15:32,837 - Gdb - DEBUG - RESULT: exit None
+2023-03-06 18:15:32,846 - Debug Adapter (main) - DEBUG - Closing the Socket
+2023-03-06 18:15:32,846 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Closing the Socket\n", "source": {}}, "seq": 278}
+
+2023-03-06 18:15:32,846 - Debug Adapter (main) - DEBUG - Stopping of the Writer thread
+2023-03-06 18:15:32,847 - Debug Adapter (WriterThread) - DEBUG - Writing: {"type": "event", "event": "output", "body": {"output": "Stopping of the Writer thread\n", "source": {}}, "seq": 279}
+
+2023-03-06 18:15:32,847 - Debug Adapter (main) - DEBUG - Stopping of the Reader thread
+2023-03-06 18:15:32,848 - Debug Adapter (main) - DEBUG - Adapter is Stopped
+2023-03-06 18:15:32,848 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STOPPED
+2023-03-06 18:15:32,848 - Debug Adapter(Command Processor) - DEBUG - Processed command: disconnect

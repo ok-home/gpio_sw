@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"esp_log.h": "c",
+			"unity.h": "c",
+			"freertos.h": "c",
+			"gpio_sw.h": "c"
+		}
+	}
+}
