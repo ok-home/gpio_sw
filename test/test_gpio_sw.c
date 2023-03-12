@@ -125,13 +125,13 @@ TEST_CASE("gpio_sw_init", "[GPIO SW]")
     TEST_ASSERT_NOT_EQUAL_MESSAGE(cfg, NULL, "null ptr error");
     TEST_ASSERT_NOT_EQUAL_MESSAGE(sw_gpio_get_debounce_task_handle(cfg), 0, "task create - task handle not null");
     TEST_ASSERT_NOT_EQUAL_MESSAGE(ff_gpio_isr_handler_get(GPIO_NUM_6), NULL, "ISR install & add - ISR handle not null");
-    gpio_sw_delete(cfg);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete_event_loop();
     // проверка на номер порта
     cfg = sw_gpio_init(60, SW_DEFAULT_MODE, DEFAULT_BOUNCEDELAY, DEFAULT_DETECT_TIME, NULL);
     TEST_ASSERT_EQUAL_INT_MESSAGE(cfg, NULL, "invalid port number");
-    gpio_sw_delete(cfg);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete_event_loop();
 }
 
 TEST_CASE("TaskNotify handle short press short only", "[GPIO SW]")
@@ -164,7 +164,7 @@ TEST_CASE("TaskNotify handle short press short only", "[GPIO SW]")
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 0, "on/off detect 0 -70ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 0 cnt 1 -70ms");
 
-    gpio_sw_delete(cfg);
+    sw_gpio_delete(cfg);
 }
 
 TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
@@ -248,7 +248,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 0, "on/off detect 0 500ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 2, "on/off detect 2 cnt 1 500ms");
 
-    gpio_sw_delete(cfg);
+    sw_gpio_delete(cfg);
 }
 
 TEST_CASE("TaskNotify Event loop handle short press short only", "[GPIO SW]")
@@ -283,8 +283,8 @@ TEST_CASE("TaskNotify Event loop handle short press short only", "[GPIO SW]")
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 0 cnt 1 -70ms");
 
     vQueueDelete(xQueue_tst);
-    gpio_sw_delete(cfg);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete_event_loop();
 }
 
 TEST_CASE("TaskNotify Event loop handle multiply handle", "[GPIO SW]")
@@ -347,9 +347,9 @@ TEST_CASE("TaskNotify Event loop handle multiply handle", "[GPIO SW]")
     vQueueDelete(xQueue_tst);
     vQueueDelete(xQueue_tst1);
 
-    gpio_sw_delete(cfg);
-    gpio_sw_delete(cfg1);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete(cfg1);
+    sw_gpio_delete_event_loop();
 }
 
 TEST_CASE("TaskNotify Event loop handle multiply gpio one handle", "[GPIO SW]")
@@ -412,9 +412,9 @@ TEST_CASE("TaskNotify Event loop handle multiply gpio one handle", "[GPIO SW]")
     vQueueDelete(xQueue_tst);
     vQueueDelete(xQueue_tst1);
 
-    gpio_sw_delete(cfg);
-    gpio_sw_delete(cfg1);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete(cfg1);
+    sw_gpio_delete_event_loop();
 }
 
 TEST_CASE("IRQ Event loop handle multiply gpio one handle", "[GPIO SW]")
@@ -477,9 +477,9 @@ TEST_CASE("IRQ Event loop handle multiply gpio one handle", "[GPIO SW]")
     vQueueDelete(xQueue_tst);
     vQueueDelete(xQueue_tst1);
 
-    gpio_sw_delete(cfg);
-    gpio_sw_delete(cfg1);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete(cfg1);
+    sw_gpio_delete_event_loop();
 }
 
 TEST_CASE("TaskNotify auto generate mode", "[GPIO SW]")
@@ -536,6 +536,6 @@ TEST_CASE("TaskNotify auto generate mode", "[GPIO SW]")
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "1 times repeat");
 
     vQueueDelete(xQueue_tst);
-    gpio_sw_delete(cfg);
-    gpio_sw_delete_event_loop();
+    sw_gpio_delete(cfg);
+    sw_gpio_delete_event_loop();
 }

@@ -58,8 +58,8 @@ typedef struct sw_gpio_cfg sw_gpio_cfg_t;
 ESP_EVENT_DECLARE_BASE(SW_GPIO_EVENT_BASE);
 
 sw_gpio_cfg_t* sw_gpio_init(gpio_num_t sw_port,sw_gpio_mode_t sw_mode,TickType_t sw_debounce_time,TickType_t sw_detect_time,void (*sw_event_handle)(void *args, esp_event_base_t base, int32_t id, void *data)); 
-void gpio_sw_delete(sw_gpio_cfg_t *cfg);
-void gpio_sw_delete_event_loop(void);
+void sw_gpio_delete(sw_gpio_cfg_t *cfg);
+void sw_gpio_delete_event_loop(void);
 sw_gpio_out_t sw_gpio_read_status(sw_gpio_cfg_t *cfg);
 sw_gpio_mode_t sw_gpio_set_mode (sw_gpio_cfg_t *cfg,sw_gpio_mode_t sw_mode);
 TickType_t sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg,TickType_t sw_debounce_time);
