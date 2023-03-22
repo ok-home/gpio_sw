@@ -168,10 +168,10 @@ sw_gpio_cfg_t *sw_gpio_init(gpio_num_t sw_port, sw_gpio_mode_t sw_mode, TickType
             if (ret)
                 goto _err_alloc;
         }
-        cfg->sw_event_handle = sw_event_handle;
         ret = esp_event_handler_instance_register_with(sw_gpio_event_task, SW_GPIO_EVENT_BASE, cfg->sw_port, cfg->sw_event_handle, NULL, NULL);
         if (ret)
             goto _err_alloc;
+        cfg->sw_event_handle = sw_event_handle;
     }
 
     cfg->sw_out.sw_status = gpio_get_level(cfg->sw_port);

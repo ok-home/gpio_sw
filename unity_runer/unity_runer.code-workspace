@@ -12,7 +12,8 @@
 			"esp_log.h": "c",
 			"unity.h": "c",
 			"freertos.h": "c",
-			"gpio_sw.h": "c"
+			"gpio_sw.h": "c",
+			"esp_event_internal.h": "c"
 		}
 	}
 }
