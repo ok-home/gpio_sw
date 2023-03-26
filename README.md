@@ -40,10 +40,15 @@
     //
     void sw_gpio_delete(sw_gpio_cfg_t *cfg);// удалить обработчик
     void sw_gpio_delete_event_loop(void); // удалить event loop после удаления всех обработчиков
-    sw_gpio_out_t sw_gpio_read_status(sw_gpio_cfg_t *cfg);// прочитать состояние кнопки
-    sw_gpio_mode_t sw_gpio_set_mode (sw_gpio_cfg_t *cfg,sw_gpio_mode_t sw_mode);//изменить режим работы обработчика
-    TickType_t sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg,TickType_t sw_debounce_time);//изменить время обработки дребезга
-    TickType_t sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg,TickType_t sw_detect_time);//изменить время регистрации быстрых переключений/время автоповтора
+    sw_gpio_out_t sw_gpio_get_status(sw_gpio_cfg_t *cfg);
+    void sw_gpio_set_status(sw_gpio_cfg_t *cfg,sw_gpio_out_t value);
+    sw_gpio_mode_t sw_gpio_get_mode (sw_gpio_cfg_t *cfg);
+    void sw_gpio_set_mode (sw_gpio_cfg_t *cfg,sw_gpio_mode_t sw_mode);
+    TickType_t sw_gpio_get_debounce_time(sw_gpio_cfg_t *cfg);
+    void sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg,TickType_t sw_debounce_time);
+    TickType_t sw_gpio_get_detect_time(sw_gpio_cfg_t *cfg);
+    void sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg,TickType_t sw_detect_time);
+
 
 Пример использования - в папке example
 

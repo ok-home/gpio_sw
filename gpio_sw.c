@@ -25,6 +25,7 @@ struct sw_gpio_cfg
     TickType_t sw_detect_time;            // in
     TaskHandle_t sw_debounce_task_handle; // internal out
     sw_event_handle_t sw_event_handle;    // event handle callback
+    portMUX_TYPE sw_spinlock;
 };
 
 static esp_event_loop_handle_t sw_gpio_event_task = NULL;
@@ -33,7 +34,7 @@ ESP_EVENT_DEFINE_BASE(SW_GPIO_EVENT_BASE);
 
 static void sw_local_callback(char *tag, sw_gpio_cfg_t *gpio_sw)
 {
-//    ESP_LOGI(tag, "SW lvl %d cnt %d period %lu", gpio_sw->sw_out.sw_status, gpio_sw->sw_out.sw_cnt, gpio_sw->sw_detect_time);
+    //    ESP_LOGI(tag, "SW lvl %d cnt %d period %lu", gpio_sw->sw_out.sw_status, gpio_sw->sw_out.sw_cnt, gpio_sw->sw_detect_time);
     // cb call;
     if (sw_gpio_event_task)
     {
@@ -53,12 +54,16 @@ static void sw_debounce_task(void *cfg)
 {
     sw_gpio_cfg_t *gpio_sw = (sw_gpio_cfg_t *)cfg;
     TickType_t delay = portMAX_DELAY;
-    uint32_t cntisr = 0;                                          // прерываний в очереди
-    gpio_sw->sw_out.sw_status = gpio_get_level(gpio_sw->sw_port); // текущее состояние порта
-    int cur_lvl = gpio_sw->sw_out.sw_status;                      // ( предыдущее значение )зафиксированное состояние переключателя
-    int sw_lvl = cur_lvl;                                         // текущее состояние
-    TickType_t expired_time = 0;                                  // xTaskGetTickCount(); // количество циклов до срабатывания //TickType_t xTaskGetTickCount( void );
-    int cnt_press = gpio_sw->sw_out.sw_cnt = 0;
+    uint32_t cntisr = 0;
+    sw_gpio_out_t lc_sw_out; // прерываний в очереди
+    lc_sw_out.sw_status = gpio_get_level(gpio_sw->sw_port);
+    lc_sw_out.sw_cnt = 0;
+    sw_gpio_set_status(gpio_sw, lc_sw_out); // текущее состояние порта
+    int cur_lvl = lc_sw_out.sw_status;      // ( предыдущее значение )зафиксированное состояние переключателя
+    int sw_lvl = cur_lvl;                   // текущее состояние
+    TickType_t expired_time = 0;            // xTaskGetTickCount(); // количество циклов до срабатывания //TickType_t xTaskGetTickCount( void );
+    int cnt_press = lc_sw_out.sw_cnt = 0;
+
     for (;;)
     {
         cntisr = ulTaskNotifyTake(pdFALSE, delay); // есть некоторое количество прерываний
@@ -66,14 +71,14 @@ static void sw_debounce_task(void *cfg)
         {
             if (delay == portMAX_DELAY)
             {
-                expired_time = xTaskGetTickCount() + gpio_sw->sw_detect_time;
+                expired_time = xTaskGetTickCount() + sw_gpio_get_detect_time(gpio_sw); // gpio_sw->sw_detect_time;
             }
-            delay = gpio_sw->sw_debounce_time; // проверяем дребезг за время задержки
-            continue;                          // пока отрабатываем каждый фронт на дребезге; cntisr - должен уменьшаться на каждом вызове ulTaskNotifyTake
+            delay = sw_gpio_get_debounce_time(gpio_sw); // gpio_sw->sw_debounce_time; // проверяем дребезг за время задержки
+            continue;                                   // пока отрабатываем каждый фронт на дребезге; cntisr - должен уменьшаться на каждом вызове ulTaskNotifyTake
         }
         // за время задержки дребезга не было прерываний - дребезг завершен фиксируем
         cur_lvl = gpio_get_level(gpio_sw->sw_port);
-        if (gpio_sw->sw_mode == SW_DEFAULT_MODE)
+        if (sw_gpio_get_mode(gpio_sw) == SW_DEFAULT_MODE)
         {
             // зафиксировано переключение после дребезга
             if (sw_lvl != cur_lvl) // было переключение, не только дребезг
@@ -81,8 +86,9 @@ static void sw_debounce_task(void *cfg)
                 cnt_press++;
             }
             sw_lvl = cur_lvl;
-            gpio_sw->sw_out.sw_status = cur_lvl;
-            gpio_sw->sw_out.sw_cnt = cnt_press;
+            lc_sw_out.sw_status = cur_lvl;
+            lc_sw_out.sw_cnt = cnt_press;
+            sw_gpio_set_status(gpio_sw, lc_sw_out);
             if (expired_time >= xTaskGetTickCount())
             {
                 continue;
@@ -99,18 +105,21 @@ static void sw_debounce_task(void *cfg)
             if (sw_lvl != cur_lvl) // было переключение, не только дребезг
             {
                 sw_lvl = cur_lvl;
-                gpio_sw->sw_out.sw_status = cur_lvl;
+                lc_sw_out.sw_status = cur_lvl;
+                sw_gpio_set_status(gpio_sw, lc_sw_out);
                 if (cnt_press == 0) // первое переключение
                 {
                     cnt_press++;
-                    delay = gpio_sw->sw_detect_time;
-                    gpio_sw->sw_out.sw_cnt = cnt_press;
+                    delay = sw_gpio_get_detect_time(gpio_sw); // gpio_sw->sw_detect_time;
+                    lc_sw_out.sw_cnt = cnt_press;
+                    sw_gpio_set_status(gpio_sw, lc_sw_out);
                     sw_local_callback("GPIO_SW_CONTINUE", gpio_sw);
                 }
                 else // обратное переключение
                 {
                     cnt_press = 0;
-                    gpio_sw->sw_out.sw_cnt = cnt_press;
+                    lc_sw_out.sw_cnt = cnt_press;
+                    sw_gpio_set_status(gpio_sw, lc_sw_out);
                     delay = portMAX_DELAY;
                 }
             }
@@ -119,8 +128,9 @@ static void sw_debounce_task(void *cfg)
                 if (cnt_press)
                 {
                     cnt_press++;
-                    gpio_sw->sw_out.sw_cnt = cnt_press;
-                    delay = gpio_sw->sw_detect_time;
+                    lc_sw_out.sw_cnt = cnt_press;
+                    sw_gpio_set_status(gpio_sw, lc_sw_out);
+                    delay = sw_gpio_get_detect_time(gpio_sw); // gpio_sw->sw_detect_time;
                     sw_local_callback("GPIO_SW_CONTINUE", gpio_sw);
                 }
             }
@@ -136,9 +146,13 @@ sw_gpio_cfg_t *sw_gpio_init(gpio_num_t sw_port, sw_gpio_mode_t sw_mode, TickType
     {
         return cfg;
     }
+    cfg->sw_spinlock.owner = portMUX_FREE_VAL;
+    cfg->sw_spinlock.count = 0;
+
     sw_gpio_set_mode(cfg, sw_mode);
     sw_gpio_set_debounce_time(cfg, sw_debounce_time);
     sw_gpio_set_detect_time(cfg, sw_detect_time);
+
 
     cfg->sw_port = sw_port;
     // gpio pin config
@@ -168,10 +182,10 @@ sw_gpio_cfg_t *sw_gpio_init(gpio_num_t sw_port, sw_gpio_mode_t sw_mode, TickType
             if (ret)
                 goto _err_alloc;
         }
+        cfg->sw_event_handle = sw_event_handle;
         ret = esp_event_handler_instance_register_with(sw_gpio_event_task, SW_GPIO_EVENT_BASE, cfg->sw_port, cfg->sw_event_handle, NULL, NULL);
         if (ret)
             goto _err_alloc;
-        cfg->sw_event_handle = sw_event_handle;
     }
 
     cfg->sw_out.sw_status = gpio_get_level(cfg->sw_port);
@@ -202,8 +216,9 @@ _err_alloc:
     return NULL;
 }
 
-sw_gpio_mode_t sw_gpio_set_mode(sw_gpio_cfg_t *cfg, sw_gpio_mode_t sw_mode)
+void sw_gpio_set_mode(sw_gpio_cfg_t *cfg, sw_gpio_mode_t sw_mode)
 {
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
     if (sw_mode > SW_AUTO_GENERATE_MODE)
     {
         cfg->sw_mode = SW_DEFAULT_MODE;
@@ -212,10 +227,20 @@ sw_gpio_mode_t sw_gpio_set_mode(sw_gpio_cfg_t *cfg, sw_gpio_mode_t sw_mode)
     {
         cfg->sw_mode = sw_mode;
     }
-    return cfg->sw_mode;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
 }
-TickType_t sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg, TickType_t sw_debounce_time)
+sw_gpio_mode_t sw_gpio_get_mode(sw_gpio_cfg_t *cfg)
 {
+    sw_gpio_mode_t ret;
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
+    ret = cfg->sw_mode;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
+    return ret;
+}
+
+void sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg, TickType_t sw_debounce_time)
+{
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
     if (sw_debounce_time < MIN_BOUNCEDELAY || sw_debounce_time > MAX_BOUNCEDELAY)
     {
         cfg->sw_debounce_time = DEFAULT_BOUNCEDELAY;
@@ -224,10 +249,19 @@ TickType_t sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg, TickType_t sw_debounce_
     {
         cfg->sw_debounce_time = sw_debounce_time;
     }
-    return cfg->sw_debounce_time;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
 }
-TickType_t sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg, TickType_t sw_detect_time)
+TickType_t sw_gpio_get_debounce_time(sw_gpio_cfg_t *cfg)
 {
+    TickType_t ret;
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
+    ret = cfg->sw_debounce_time;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
+    return ret;
+}
+void sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg, TickType_t sw_detect_time)
+{
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
     if (sw_detect_time < MIN_DETECT_TIME || sw_detect_time > MAX_DETECT_TIME)
     {
         cfg->sw_detect_time = DEFAULT_DETECT_TIME;
@@ -236,11 +270,29 @@ TickType_t sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg, TickType_t sw_detect_time
     {
         cfg->sw_detect_time = sw_detect_time;
     }
-    return cfg->sw_detect_time;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
 }
-sw_gpio_out_t sw_gpio_read_status(sw_gpio_cfg_t *cfg)
+TickType_t sw_gpio_get_detect_time(sw_gpio_cfg_t *cfg)
 {
-    return cfg->sw_out;
+    TickType_t ret;
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
+    ret = cfg->sw_detect_time;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
+    return ret;
+}
+sw_gpio_out_t sw_gpio_get_status(sw_gpio_cfg_t *cfg)
+{
+    sw_gpio_out_t ret;
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
+    ret = cfg->sw_out;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
+    return ret;
+}
+void sw_gpio_set_status(sw_gpio_cfg_t *cfg, sw_gpio_out_t value)
+{
+    taskENTER_CRITICAL(&(cfg->sw_spinlock));
+    cfg->sw_out = value;
+    taskEXIT_CRITICAL(&(cfg->sw_spinlock));
 }
 void sw_gpio_delete(sw_gpio_cfg_t *cfg)
 {
@@ -261,6 +313,7 @@ void sw_gpio_delete_event_loop()
         sw_gpio_event_task = NULL;
     }
 }
+
 // test only
 #ifdef UNITY_TEST
 TaskHandle_t sw_gpio_get_debounce_task_handle(sw_gpio_cfg_t *cfg)

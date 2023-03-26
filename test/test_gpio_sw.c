@@ -149,7 +149,7 @@ TEST_CASE("TaskNotify handle short press short only", "[GPIO SW]")
     gpio_set_level(gpio_port, 1);
     xTaskNotifyGive(task_handle);
     vTaskDelay(DEFAULT_BOUNCEDELAY + 2); // 70ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 1, "on/off detect 1 -70ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 1 cnt 1 -70ms");
 
@@ -160,7 +160,7 @@ TEST_CASE("TaskNotify handle short press short only", "[GPIO SW]")
     gpio_set_level(gpio_port, 0);
     xTaskNotifyGive(task_handle);
     vTaskDelay(DEFAULT_BOUNCEDELAY + 2); // 70ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 0, "on/off detect 0 -70ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 0 cnt 1 -70ms");
 
@@ -182,7 +182,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     gpio_set_level(gpio_port, 1);
     isr_handle(task_handle);
     vTaskDelay(DEFAULT_BOUNCEDELAY + 2); // 70ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 1, "on/off detect 1 -70ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 1 cnt 1 -70ms");
 
@@ -191,7 +191,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     gpio_set_level(gpio_port, 1);
     isr_handle(task_handle);
     vTaskDelay(DEFAULT_BOUNCEDELAY + 2); // 70ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 1, "on/off not detect 1 -70ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 0, "on/off not detect 1 cnt 0 -70ms");
 
@@ -202,7 +202,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     gpio_set_level(gpio_port, 0);
     isr_handle(task_handle);
     vTaskDelay(DEFAULT_BOUNCEDELAY + 10); // 70ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 0, "on/off detect 0 -70ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 0 cnt 1 -70ms");
 
@@ -215,7 +215,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     gpio_set_level(gpio_port, 1);
     isr_handle(task_handle);
     vTaskDelay(DEFAULT_DETECT_TIME + DEFAULT_BOUNCEDELAY + 5); // 500ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 1, "on/off detect 1 500ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 1 cnt 1 500ms");
 
@@ -226,7 +226,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     gpio_set_level(gpio_port, 0);
     isr_handle(task_handle);
     vTaskDelay(DEFAULT_DETECT_TIME + DEFAULT_BOUNCEDELAY + 5); // 500ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 0, "on/off detect 1 500ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 1, "on/off detect 1 cnt 1 500ms");
 
@@ -244,7 +244,7 @@ TEST_CASE("IRQ handle short/long press", "[GPIO SW]")
     gpio_set_level(gpio_port, 0);
     isr_handle(task_handle);
     vTaskDelay(DEFAULT_DETECT_TIME + DEFAULT_BOUNCEDELAY + 5); // 500ms - default debounce 50ms
-    result = sw_gpio_read_status(cfg);
+    result = sw_gpio_get_status(cfg);
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_status, 0, "on/off detect 0 500ms");
     TEST_ASSERT_EQUAL_INT_MESSAGE(result.sw_cnt, 2, "on/off detect 2 cnt 1 500ms");
 

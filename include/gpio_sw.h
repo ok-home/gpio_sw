@@ -60,10 +60,14 @@ ESP_EVENT_DECLARE_BASE(SW_GPIO_EVENT_BASE);
 sw_gpio_cfg_t* sw_gpio_init(gpio_num_t sw_port,sw_gpio_mode_t sw_mode,TickType_t sw_debounce_time,TickType_t sw_detect_time,void (*sw_event_handle)(void *args, esp_event_base_t base, int32_t id, void *data)); 
 void sw_gpio_delete(sw_gpio_cfg_t *cfg);
 void sw_gpio_delete_event_loop(void);
-sw_gpio_out_t sw_gpio_read_status(sw_gpio_cfg_t *cfg);
-sw_gpio_mode_t sw_gpio_set_mode (sw_gpio_cfg_t *cfg,sw_gpio_mode_t sw_mode);
-TickType_t sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg,TickType_t sw_debounce_time);
-TickType_t sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg,TickType_t sw_detect_time);
+sw_gpio_out_t sw_gpio_get_status(sw_gpio_cfg_t *cfg);
+void sw_gpio_set_status(sw_gpio_cfg_t *cfg,sw_gpio_out_t value);
+sw_gpio_mode_t sw_gpio_get_mode (sw_gpio_cfg_t *cfg);
+void sw_gpio_set_mode (sw_gpio_cfg_t *cfg,sw_gpio_mode_t sw_mode);
+TickType_t sw_gpio_get_debounce_time(sw_gpio_cfg_t *cfg);
+void sw_gpio_set_debounce_time(sw_gpio_cfg_t *cfg,TickType_t sw_debounce_time);
+TickType_t sw_gpio_get_detect_time(sw_gpio_cfg_t *cfg);
+void sw_gpio_set_detect_time(sw_gpio_cfg_t *cfg,TickType_t sw_detect_time);
 // test only
 #ifdef UNITY_TEST
 TaskHandle_t sw_gpio_get_debounce_task_handle(sw_gpio_cfg_t *cfg);
